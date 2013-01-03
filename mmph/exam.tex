@@ -2,6 +2,8 @@
 \input{../.preambles/10-russian}
 \input{../.preambles/20-math}
 
+\renewcommand{\arraystretch}{1.2}
+
 \newcommand{\header}[1]{\vspace*{.3em}\emph{#1}\vspace*{.2em}}
 \newcommand{\D}{\,\Delta}
 \newcommand{\pnder}[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
@@ -89,6 +91,39 @@
 
 \emph{2. Математическая модель теплопроводности. Некоторые уравнения
 диффузионного типа.}
+
+\header{Математическая модель теплопроводности} представляет собой систему четырех
+уравнений:
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \displaystyle \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+        \vspace*{.4em} \\
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(0, t) = f_1(t), \\
+            u(l, t) = f_2(t); 
+        \end{array} \right. \\
+        \text{НУ:} & u(x, 0) = \phi(x).
+    \end{array} \right\}
+\]
+
+\header{Некоторые уравнения диффузионного типа:}
+\begin{enumerate}
+    \item теплообмен через боковую поверхность пропорционально разности
+    температур:
+    \[
+        \pder{u}{t} = \alpha^2\ppder{u}{x} - \beta(u - u_0);
+    \]
+    
+    \item внутренний источник тепла:
+    \[
+        \pder{u}{t} = \alpha^2\ppder{u}{x} + f(x, t);
+    \]
+    
+    \item уравнение конвективной диффузии:
+    \[
+        \pder{u}{t} = \alpha^2 \ppder{u}{x} - v\pder{u}{x}.
+    \]
+\end{enumerate}
 
 \newpage % ---------------------------------------------------------------------
 
