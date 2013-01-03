@@ -1,0 +1,3 @@
+[submodule ".preambles"]
+	path = .preambles
+	url = git@github.com:citrux/preambles.git
