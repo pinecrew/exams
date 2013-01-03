@@ -2,11 +2,13 @@
 \input{../.preambles/10-russian}
 \input{../.preambles/20-math}
 
-
+\renewcommand{\div}{\mathrm{div}\,}
+\newcommand{\grad}{\mathrm{grad}\,}
 \newcommand{\header}[1]{\vspace*{.3em}\emph{#1}\vspace*{.2em}}
 \newcommand{\D}{\,\Delta}
 \newcommand{\pnder}[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
 \renewcommand{\kappa}{\varkappa}
+\newcommand{\ds}{\displaystyle}
 
 \begin{document}
 \emph{1. Понятие о ДУЧП, примеры. Методы решения ДУЧП. Типы ДУЧП.}
@@ -96,7 +98,7 @@
 уравнений:
 \[
     \left. \begin{array}{rl}
-        \text{ДУЧП:} & \displaystyle \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}; 
         \vspace*{.4em} \\
         \text{ГУ:} & \left\{ \begin{array}{l}
             u(0, t) = f_1(t), \\
@@ -161,6 +163,48 @@
 \newpage % ---------------------------------------------------------------------
 
 \emph{4. Вывод уравнения теплопроводности.}
+
+Запишем уравнение диффузии: \( \vec{j} = -\kappa\cdot\grad u \), где \( u \)
+имеет смысл температуры. Рассмотрим малую окрестность точки наблюдения.
+Внутренняя энергия, заключенная в её объеме \( V \) может измениться только за
+счет теплообмена, то есть:
+\[
+    \der{W}{t} = -\oiint\limits_S \vec{j}\cdot\d\vec{S}.
+\]
+
+Для интеграла в правой части по теореме Остроградского имеем
+    \( \ds \oiint\limits_S \vec{j}\cdot\d\vec{S} = \iiint\limits_V
+    \div\vec{j}\d V \),
+а в левой: \( \ds W = \iiint_V w\cdot\d V \). Таким образом, имеем:
+\[
+    \der{}{t}\iiint\limits_V w\d V = \iiint\limits_V \kappa\, \div\grad u\d V.
+\]
+В силу произвольности выбора элемента объема имеем:
+\[
+   \pder{w}{t} = \kappa\cdot\Delta u,
+\]
+где \( \Delta \) -- оператор Лапласа; \( w = \rho\cdot c\cdot u\), где
+\( \rho \) -- плотность вещества, а \( c \) -- его удельная теплоемкость. Получаем:
+\[
+    \rho e\pder{u}{t} = \kappa\Delta u, \quad \text{или} \quad
+    \pder{u}{t} = \frac{\kappa}{\rho c}\Delta u.
+\]
+
+Обозначая \( \cfrac{\kappa}{\rho c} = \alpha^2 \), получаем уравнение
+теплопроводности: \( \ds \pder{u}{t} = \alpha^2\Delta u \), переходящее в
+одномерном случае в
+\[
+    \pder{u}{t} = \alpha^2\ppder{u}{x},
+\]
+соответствующее распространению тепла в одномерном стержне с теплоизолированной
+боковой поверхностью.
+
+В случае, когда потери через боковую поверхность пропорциональны разнице
+температур, уравнение принимает вид:
+\[
+    \pder{u}{t} = \alpha^2\ppder{u}{x} - \beta(u - u_0),
+\]
+где \( u_0 \) -- температура окружающей среды.
 
 \newpage % ---------------------------------------------------------------------
 
