@@ -1,0 +1,79 @@
+\section{Метод разделения переменных и его применение в диффузионных задачах.}
+
+Суть метода разделения переменных состоит в том, что частное решение задачи
+ищется в виде композиции функций каждой их переменных. Рассмотрим его применение
+к задаче диффузионного типа:
+
+\begin{minipage}{.4\textwidth}
+\flushleft
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+        \vspace*{.4em} \\
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(0, t) = f_1(t), \\
+            u(l, t) = f_2(t); 
+        \end{array} \right. \\
+        \text{НУ:} & u(x, 0) = \phi(x).
+    \end{array} \right\}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.56\textwidth}
+    Так как в ДУЧП входят две независимые переменные \( x \) и \( t \), то
+    частное решение будем искать в виде \( u = X(x)T(t) \).
+    
+    Подставим его в ДУЧП:
+    \[
+        X\cdot T' = \alpha^2 T\cdot X''.
+    \]
+\end{minipage}
+    
+    Разделив на \( \alpha^2 XT \), имеем:
+    \[
+        \frac{T'}{\alpha^2 T} = \frac{X''}{X} = k,
+    \]
+    где \( k \) -- константа разделения.
+
+Получаем два ОДУ: \( X'' - kX = 0 \) и \( T' - k\alpha^2T = 0 \). Из
+функциональных соображений решение должно быть ограничено. Это возможно, если
+\( k = -\lambda^2 \), где \( \lambda \in (0, +\infty) \). Тогда ОДУ:
+\[
+    X'' + \lambda^2X = 0, \quad T' + \lambda^2\alpha^2T = 0,
+\]
+и их решения:
+\[
+    X = A\sin\lambda x + B\cos\lambda x, \quad T = \e^{-\lambda^2\alpha^2 t}.
+\]
+
+Получаем, что
+\[
+    u = (A\sin\lambda x + B\cos\lambda x)\e^{-\lambda^2\alpha^2 t}.
+\]
+
+Найденное решение должно удовлетворять граничным условиям:
+\begin{align*}
+    & u(0, t) = 0 \Rightarrow A\sin0 + B\cos0 = 0 \Rightarrow B = 0; \\
+    & u(l, t) = 0 \Rightarrow A\sin\lambda l = 0 \Rightarrow \lambda l = \pi n
+    \Rightarrow \lambda_n = \frac{\pi n}{l}.
+\end{align*}
+
+Получаем семейство функций:
+\[
+    u_n = A_n\sin\frac{\pi n}{l}x \cdot \e^{-\left(\frac{\alpha\pi n}
+    {l}\right)^2t},
+\]
+а общее решение краевой задачи получаем в виде:
+\[
+    u = \sum\limits_{n = 1}^\infty A_n\sin\frac{\pi n}{l}x \cdot
+    \e^{-\left(\frac{\alpha\pi n}{l}\right)^2t}.
+\]
+
+Это решение должно удовлетворять начальному условию:
+\[
+    \phi(x) = \sum\limits_{n = 1}^\infty A_n\sin\frac{\pi n}{l}x \Rightarrow
+    A_n = \frac{2}{l}\int\limits_0^l \phi(x)\sin\frac{\pi n}{l}x.
+\]
+
+\newpage % ---------------------------------------------------------------------
+
