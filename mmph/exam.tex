@@ -2,11 +2,11 @@
 \input{../.preambles/10-russian}
 \input{../.preambles/20-math}
 
-\renewcommand{\arraystretch}{1.2}
 
 \newcommand{\header}[1]{\vspace*{.3em}\emph{#1}\vspace*{.2em}}
 \newcommand{\D}{\,\Delta}
 \newcommand{\pnder}[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\renewcommand{\kappa}{\varkappa}
 
 \begin{document}
 \emph{1. Понятие о ДУЧП, примеры. Методы решения ДУЧП. Типы ДУЧП.}
@@ -128,6 +128,35 @@
 \newpage % ---------------------------------------------------------------------
 
 \emph{3. Граничные условия в задачах диффузионного типа.}
+
+В задачах диффузионного типа используются ГУ трёх основных видов:
+\begin{enumerate}
+    \item ГУ I рода -- заданы значения функции на границе области:
+    \[
+        \left\{ \begin{array}{l}
+            u(0, t) = g_1(t); \\
+            u(l, t) = g_2(t).
+        \end{array} \right.
+    \]
+    
+    \item ГУ II рода -- задана температура окружающей среды \( g_1(t) \) и
+    \( g_2(t) \):
+    \[
+        \left\{ \begin{array}{l}
+            u'_x(0, t) = \cfrac{h}{\kappa}\Big(u(0, t) - g_1(t)\Big); \\
+            u'_x(l, t) = \cfrac{h}{\kappa}\Big(u(l, t) - g_2(t)\Big).
+        \end{array} \right.
+    \]
+    
+    \item ГУ III рода -- задан поток через границу области (градиент на границе
+    области):
+    \[
+        \left\{ \begin{array}{l}
+            u'_x(0, t) = g_1(t); \\
+            u'_x(l, t) = g_2(t).
+        \end{array} \right.
+    \]
+\end{enumerate}
 
 \newpage % ---------------------------------------------------------------------
 
