@@ -2,12 +2,22 @@
 \input{../.preambles/10-russian}
 \input{../.preambles/20-math}
 
+\usepackage[unicode,
+			colorlinks,linkcolor=black,filecolor=blue,citecolor=green]{hyperref}
+
+\usepackage{titlesec, blindtext, color}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\normalsize\bfseries}{Вопрос \thechapter.\hsp}{0pt}{\normalsize\bfseries}
+
+
 \newcommand{\header}[1]{\vspace*{.3em}\emph{#1}\vspace*{.2em}}
 \newcommand{\Der}[2]{\frac{\Delta #1}{\Delta #2}}
 \newcommand{\defeq}{\stackrel{\mathrm{def}}{=}}
 \newcommand{\D}{\,\Delta}
 
 \begin{document}
+\tableofcontents
+\newpage
 \input{01}
 \input{02}
 \input{03}
