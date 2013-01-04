@@ -1,3 +1,58 @@
 \chapter{Принцип наименьшего действия Мопертюи-Лагранжа. Действие по Лагранжу.}
 
+Для действительного движения частицы интеграл \( \ds \int\limits_a^b v\d S \),
+взятый по прямой, есть минимум по сравнению с такими же интегралами по другим кривым.
+
+Запишем действие по Гамильтону для системы с постоянной полной энергией
+\( E = T + \varPi = h = \const \) и идеальными склерономными связями:
+\[
+    S = \int\limits_0^t L\d t = \int\limits_0^t (T - \varPi)\d t =
+    \int\limits_0^t (2T - h)\d t = \int\limits_0^t 2T\d t - ht.
+\]
+
+Интеграл \( W = \int\limits_0^t 2T\d t \) называется действием по Лагранжу.
+Тогда действие по Гамильтону: \( S = W - ht \).
+
+\header{Принцип наименьшего действия Мопертюи-Лагранжа}:
+
+действительные движения голономной, консервативной механической системы между
+двумя заданными конфигурациями \( A(q_0, q_1, \ldots) \) и \( B(q_0, q_1,
+\ldots) \) отличаются от кинематически возможных движений, совершаемых между
+теми же конфигурациями и с той же полной энергией, тем, что для действительного
+движения полная вариация действия по Лагранжу равна нулю: \( \D W = 0 \).
+
+Покажем, что из этого принципа следуют уравнения Лагранжа второго рода.
+
+Распишем полную вариацию действия по Лагранжу:
+\[
+    \D W = \D S + h\D t = \delta S + S\D t + h\D t = \delta S + (L + h)\D t =
+    \delta S + 2T\D t.
+\]
+Учтем, что \( \ds
+    \delta S = \int\limits_0^t \left[\sum\limits_{i=1}^n \left\{\pder{L}{q_i} -
+    \der{}{t}\left(\pder{L}{\dot{q}_i}\right)\right\}\delta q_i\right]\d t +
+    \sum\limits_{i=1}^n \pder{L}{\dot{q}_i}\delta q_i\Biggr|_0^t \),
+где
+\[
+    \sum\limits_{i=1}^n \pder{L}{\dot{q}_i}\delta q_i\biggr|_0^t =
+    \sum\limits_{i=1}^n \pder{T}{\dot{q}_i}\delta q_i\biggr|_0^t =
+    \sum\limits_{i=1}^n \pder{T}{\dot{q}_i}\D q_i\biggr|_0^t -
+    \sum\limits_{i=1}^n \pder{T}{\dot{q}_i}\dot{q}_i\D t\biggr|_0^t =
+    -2T\D t\biggr|_0^t.
+\]
+Здесь учтено, что \( \D q_n = 0 \) в начале и конце движения. Подставляя
+обратно:
+\[
+    \D W = \int\limits_0^t \left[\sum\limits_{i=1}^n \left\{\pder{L}{q_i} -
+    \der{}{t}\left(\pder{L}{\dot{q}_i}\right)\right\}\delta q_i\right]\d t +
+    2T\D t - 2T\D t = \int\limits_0^t \left[\sum\limits_{i=1}^n \left\{\pder{L}{q_i} -
+    \der{}{t}\left(\pder{L}{\dot{q}_i}\right)\right\}\delta q_i\right]\d t = 0.
+\]
+
+Отсюда очевидным образом следуют уравнения Лагранжа второго рода:
+\[
+    \sum\limits_{i=1}^n \left[\pder{L}{q_i} - \der{}{t}\left(\pder{L}{\dot{q}_i}
+    \right)\right] = 0.
+\]
+
 \newpage
