@@ -1,4 +1,85 @@
 \chapter{Преобразование неоднородных ГУ в однородные. Преобразование зависящих
 от времени ГУ в нулевые.}
 
+\begin{minipage}{.45\textwidth}
+    \header{Преобразование неоднородных ГУ в однородные}
+    
+    Рассмотрим задачу о распространении тепла в стержне, концы которого
+    поддерживаются при постоянной температуре:
+    \[
+        \left. \begin{array}{rl}
+            \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+            \vspace*{.4em} \\
+            \text{ГУ:} & \left\{ \begin{array}{l}
+                u(0, t) = k_1, \\
+                u(l, t) = k_2; 
+            \end{array} \right. \\
+            \text{НУ:} & u(x, 0) = \phi(x).
+        \end{array} \right\}
+    \]
+    
+    Произведем замену
+    \[
+        u(x, t) = \frac{xk_2 + (l-x)k_1}{l} + \bar{u}(x, t).
+    \]
+    Тогда задача с неоднородными ГУ преобразуется в задачу с
+    однородными ГУ относительно функции \( \bar{u} \):
+    \[
+        \left. \begin{array}{rl}
+            \text{ДУЧП:} & \ds \pder{\bar{u}}{t} = \alpha^2\ppder{\bar{u}}{x};
+            \vspace*{.4em} \\
+            \text{ГУ:} & \left\{ \begin{array}{l}
+                \bar{u}(0, t) = 0, \\
+                \bar{u}(l, t) = 0; 
+            \end{array} \right. \\
+            \text{НУ:} & \bar{u}(x, 0) = \bar{\phi}(x),
+        \end{array} \right\}
+    \]
+    где \( \ds \bar{\phi}(x) = \phi(x) - \frac{xk_2 + (l-x)k_1}{l} \).
+\end{minipage}
+\hfill
+\begin{minipage}{.48\textwidth}
+    \header{Преобразование зависящих от времени ГУ в нулевые}
+    \[
+        \left. \begin{array}{rl}
+            \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+            \vspace*{.4em} \\
+            \text{ГУ:} & \left\{ \begin{array}{l}
+                u(0, t) = g_1(t), \\
+                u'_x(l, t) + hu(l, t) = g_2(t); 
+            \end{array} \right. \\
+            \text{НУ:} & u(x, 0) = \phi(x).
+        \end{array} \right\}
+    \]
+    
+    Произведем замену \( u(x, t) = s(x, t) + \bar{u}(x,t) \), где \( s(x, t) =
+    a(t)\cdot\left(1 - \cfrac{x}{l}\right) + b(t)\cdot\cfrac{x}{l} \), причем
+    \( s(x, t) \) должна удовлетворять ГУ:
+    \[
+        \begin{array}{l}
+            s(0, t) = g_1(t), \\
+            s'_x(l, t) + hs(l, t) = g_2(t),
+        \end{array}
+        \Rightarrow
+        \begin{array}{l}
+            a(t) = g_1(t), \\
+            b(t) = \cfrac{g_1(t) + lg_2(t)}{1 + lh}.
+        \end{array}
+    \]
+    Следовательно, с учетом подстановки имеем преобразованную задачу с нулевыми
+    ГУ:
+    \[
+        \left. \begin{array}{rl}
+            \text{ДУЧП:} & \ds \pder{\bar{u}}{t} = \alpha^2\ppder{\bar{u}}{x}
+            - \pder{s}{t};
+            \vspace*{.4em} \\
+            \text{ГУ:} & \left\{ \begin{array}{l}
+                \bar{u}(0, t) = 0, \\
+                \bar{u}'_x(l, t) + h\bar{u}(l, t) = 0; 
+            \end{array} \right. \\
+            \text{НУ:} & \bar{u}(x, 0) = \phi(x) - s(x, 0),
+        \end{array} \right\}
+    \]
+\end{minipage}
+
 \newpage
