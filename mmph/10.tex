@@ -21,33 +21,31 @@
         Синус-преобразование Фурье &
         % используется \( \ds x \) для уменьшения занимаемого места
         \( \ds
-            F_s[f] = F(\omega) = \frac{2}{\pi}\int\limits_0^\infty f(t)
-            \sin(\omega t)\d t
+            F_s[f] = F(\omega) = \frac{2}{\pi}\int\lni f(t)\sin(\omega t)\d t
         \)
         &
         \( \ds
-            F_s^{-1}[F] = f(t) = \int\limits_0^\infty F(\omega)\sin(\omega t)
-            \d\omega
+            F_s^{-1}[F] = f(t) = \int\lni F(\omega)\sin(\omega t)\d\omega
         \) \\ \hline
         % --------------------
         Косинус-преобразование Фурье &
         \( \ds
-            F_c[f] = \frac{2}{\pi}\int\limits_0^\infty f(t)\cos(\omega t)\d t
+            F_c[f] = \frac{2}{\pi}\int\lni f(t)\cos(\omega t)\d t
         \)
         &
         \( \ds
-            F_c^{-1}[F] = \int\limits_0^\infty F(\omega)\cos(\omega t)\d\omega
+            F_c^{-1}[F] = \int\lni F(\omega)\cos(\omega t)\d\omega
         \) \\ \hline
         % --------------------
         Преобразование Фурье &
         \( \ds
             F[f] = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(t)
-            \e^{-\im\omega t}\d t
+            \e^{-\i\omega t}\d t
         \)
         &
         \( \ds
             F^{-1}[F] = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}
-            F(\omega)\e^{\im\omega t}\d\omega
+            F(\omega)\e^{\i\omega t}\d\omega
         \) \\ \hline
         % --------------------
         Конечное синус-преобразование &
@@ -74,21 +72,21 @@
         % --------------------
         Преобразование Лапласа &
         \( \ds
-            L[f] = \int\limits_0^\infty f(t)\e^{-st}\d t
+            L[f] = \int\lni f(t)\e^{-st}\d t
         \)
         &
         \( \ds
-            L^{-1}[F] = \frac{1}{2\pi\im}\int\limits_{c-\im\infty}^{c+\im\infty}
+            L^{-1}[F] = \frac{1}{2\pi\i}\int\limits_{c-\i\infty}^{c+\i\infty}
             F(s)\e^{st}\d s
         \) \\ \hline
         % --------------------
         Преобразование Ханкеля &
         \( \ds
-            H[f] = F_n(\xi) = \int\limits_0^\infty tJ_n(t\xi)f(t)\d t
+            H[f] = F_n(\xi) = \int\lni tJ_n(t\xi)f(t)\d t
         \)
         &
         \( \ds
-            H^{-1}[F_n] = f(t) = \int\limits_0^\infty \xi J_n(t\xi)F_n(\xi)\d\xi
+            H^{-1}[F_n] = f(t) = \int\lni \xi J_n(t\xi)F_n(\xi)\d\xi
         \) \\ \hline
     \end{tabular}
 \end{table}
@@ -107,7 +105,7 @@
 В случае преобразования Фурье имеет место непрерывный спектр:
 \( \ds
     S(\omega) = \left|\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(t)
-    \cdot\e^{-\im\omega t}\right|.
+    \cdot\e^{-\i\omega t}\right|.
 \)
 
 \section{Синус- и косинус-преобразования производных}
