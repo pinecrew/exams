@@ -1,4 +1,66 @@
 \chapter{Свойства преобразования Фурье. Решение задачи о распространении тепла
 в бесконечном стержне с заданной начальной температурой.}
 
+\header{Свойства преобразования Фурье}:
+\begin{enumerate}
+    \item обратимость: \( F^{-1}\bigl[F[f]\bigr] = f \);
+    \item линейность: \( F[af + bg] = aF[f] + bF[g] \);
+    \item преобразование производных:
+    \( \ds
+        \pnder{n}{u}{x} \to (\i\xi)^n\cdot F[u],\ 
+        \pnder{n}{u}{t} \to \pnder{n}{}{t} F[u];
+    \)
+    \item свёртка:    
+    \( F[f * g] = F[f]\cdot F[g] \), где
+    \[ 
+        (f * g)(x) = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}
+        f(x-\xi)g(\xi)\d\xi = F^{-1}\bigr[F[f]\cdot F[g]\bigl]
+        \text{ -- свёртка}.
+    \]
+\end{enumerate}
+
+Рассмотрим теперь задачу о распространении тепла бесконечном стержне, если
+задана начальная температура \( u(x, 0) = \phi(x) \):
+
+\begin{minipage}{.3\textwidth}
+    \[
+        \left\{ \begin{array}{l}
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
+            u(x, 0) = \phi(x).
+        \end{array} \right.
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}{.67\textwidth}
+    Сделаем преобразование Фурье по переменной \( x \): \( u \to \bar{u} \).
+\end{minipage}
+
+\begin{minipage}{.3\textwidth}
+    Преобразованная задача:
+    \[
+        \left\{ \begin{array}{l}
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
+            u(x, 0) = \phi(x).
+        \end{array} \right.
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}{.67\textwidth}
+    Её решение: \( \ds \bar{u} = \bar{\phi}(\xi)\cdot\e^{-\alpha^2\xi^2 t} \).
+\end{minipage}
+
+Обратным преобразованием Фурье получаем ответ:
+\[
+    u(x, t) = F^{-1}[\bar{\phi}(\xi)\cdot\e^{-\alpha^2\xi^2 t}] =
+    F^{-1}[\bar{\phi}(\xi)] * F^{-1}[\e^{-\alpha^2\xi^2 t}] =
+    \frac{1}{2\alpha\sqrt{\pi t}} \int\limits_{-\infty}^{+\infty} \phi(s)
+    \e^{\frac{-(x-s)^2}{4\alpha^2 t}}\d s.
+\]
+
+Функция \( \ds G(x, t) = \frac{1}{2\alpha\sqrt{\pi t}}
+\e^{\frac{-(x-s)^2}{4\alpha^2 t}} \) называется функцией Грина. Тогда ответ:
+\[
+    u(x, t) = \int\limits_{-\infty}^{+\infty} \phi(s)\cdot G\d s.
+\]
+
 \newpage
