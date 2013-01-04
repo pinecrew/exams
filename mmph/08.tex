@@ -1,4 +1,38 @@
 \chapter{Преобразование задачи с теплообменом через боковую поверхность к задаче
 с теплоизолированной боковой поверхностью.}
 
+Задача с теплообменом через боковую поверхность имеет вид:
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x} - \beta u;
+        \vspace*{.4em} \\
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(0, t) = 0, \\
+            u(l, t) = 0; 
+        \end{array} \right. \\
+        \text{НУ:} & u(x, 0) = \phi(x),
+    \end{array} \right\}
+\]
+
+Эта задача может быть сведена к задаче с теплоизолированной боковой поверхностью
+путем замены \( u(x, t) = \e^{-\beta t}\cdot\bar{u}(x, t) \). Действительно,
+\begin{align*}
+    \pder{u}{t} = -\beta\cdot\e^{-\beta t}\cdot\bar{u}(x, t) +
+    \e^{-\beta t}\pder{\bar{u}}{t}, \\
+    \ppder{u}{x} = \e^{-\beta t}\ppder{\bar{u}}{x}.
+\end{align*}
+
+Подставляя в исходную задачу, имеем:
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \ds \pder{\bar{u}}{t} = \alpha^2\ppder{\bar{u}}{x};
+        \vspace*{.4em} \\
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            \bar{u}(0, t) = 0, \\
+            \bar{u}(l, t) = 0; 
+        \end{array} \right. \\
+        \text{НУ:} & \bar{u}(x, 0) = \bar{\phi}(x),
+    \end{array} \right\}
+\]
+
 \newpage
