@@ -1,4 +1,130 @@
 \chapter{Интегральные преобразования. Спектр функции. Синус- и
 косинус-преобразования производных.}
 
+\section{Интегральные преобразования}
+Интегральным преобразованием называют преобразование, которое ставит в
+соответствие функции \( f(t) \) такую функцию \( F(s) \), что
+\[
+    F(s) = \int\limits_A^B K(s, t)f(t)\d t,
+\]
+где \( K(s, t) \) -- ядро преобразования. Интегральные преобразования ДУЧП
+позволяют избавиться от одной из переменных, переводя ДУЧП в ОДУ или ДУЧП с
+меньшим на единицу количеством переменных. ОДУ же переходит в алгебраические
+уравнения. Производя обратное преобразование решения полученного уравнения
+получаем решение исходного уравнения.
+
+\begin{table}[h!]
+    \center
+    \caption{Некоторые виды интегральных преобразований}
+    \begin{tabular}{|C{.17}|C{.4}|C{.4}|} \hline
+        Название & Прямое преобразование & Обратное преобразование \\ \hline
+        Синус-преобразование Фурье &
+        % используется \( \ds x \) для уменьшения занимаемого места
+        \( \ds
+            F_s[f] = F(\omega) = \frac{2}{\pi}\int\limits_0^\infty f(t)
+            \sin(\omega t)\d t
+        \)
+        &
+        \( \ds
+            F_s^{-1}[F] = f(t) = \int\limits_0^\infty F(\omega)\sin(\omega t)
+            \d\omega
+        \) \\ \hline
+        % --------------------
+        Косинус-преобразование Фурье &
+        \( \ds
+            F_c[f] = \frac{2}{\pi}\int\limits_0^\infty f(t)\cos(\omega t)\d t
+        \)
+        &
+        \( \ds
+            F_c^{-1}[F] = \int\limits_0^\infty F(\omega)\cos(\omega t)\d\omega
+        \) \\ \hline
+        % --------------------
+        Преобразование Фурье &
+        \( \ds
+            F[f] = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(t)
+            \e^{-\im\omega t}\d t
+        \)
+        &
+        \( \ds
+            F^{-1}[F] = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}
+            F(\omega)\e^{\im\omega t}\d\omega
+        \) \\ \hline
+        % --------------------
+        Конечное синус-преобразование &
+        \( \ds
+            F_s[f] = S_n = \frac{2}{L}\int\limits_0^L f(t)\sin\left(
+            \frac{\pi nt}{L}\right)\d t
+        \)
+        &
+        \( \ds
+            F_s^{-1}[S_n] = \sum\limits_{n=1}^\infty S_n\sin\left(
+            \frac{\pi nt}{L}\right)
+        \) \\ \hline
+        % --------------------
+        Конечное косинус-преобразование &
+        \( \ds
+            F_c[f] = C_n = \frac{2}{L}\int\limits_0^L f(t)\cos\left(
+            \frac{\pi nt}{L}\right)\d t
+        \)
+        &
+        \( \ds
+            F_c^{-1}[C_n] = \frac{C_0}{2} + \sum\limits_{n=1}^\infty
+            C_n\cos\left(\frac{\pi nt}{L}\right)
+        \) \\ \hline
+        % --------------------
+        Преобразование Лапласа &
+        \( \ds
+            L[f] = \int\limits_0^\infty f(t)\e^{-st}\d t
+        \)
+        &
+        \( \ds
+            L^{-1}[F] = \frac{1}{2\pi\im}\int\limits_{c-\im\infty}^{c+\im\infty}
+            F(s)\e^{st}\d s
+        \) \\ \hline
+        % --------------------
+        Преобразование Ханкеля &
+        \( \ds
+            H[f] = F_n(\xi) = \int\limits_0^\infty tJ_n(t\xi)f(t)\d t
+        \)
+        &
+        \( \ds
+            H^{-1}[F_n] = f(t) = \int\limits_0^\infty \xi J_n(t\xi)F_n(\xi)\d\xi
+        \) \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Спектр функции}
+Интегральное преобразование по сути является разложением функции в спектр
+(непрерывный в случае бесконечных преобразований и дискретный в случае
+конечных). Так, при разложении функции в ряд Фурье
+\( \ds
+   f(x) = \sum\limits_{n=0}^\infty \Bigl(A_n\cos nx + B_n\sin nx\Bigr)
+\)
+функция \( S(n) = \sqrt{A_n^2 + B_n^2} \) называется спектром функции. В данном
+случае спектр дискретен. Он показывает вклад \( n \)-ой гармоники в функцию
+\( f(x) \).
+
+В случае преобразования Фурье имеет место непрерывный спектр:
+\( \ds
+    S(\omega) = \left|\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(t)
+    \cdot\e^{-\im\omega t}\right|.
+\)
+
+\section{Синус- и косинус-преобразования производных}
+\begin{table}[h!]
+    \begin{tabular}{C{.47}cC{.47}}
+        \( \ds
+            F_s[f'] = -\omega F_c[f];
+        \)
+        \[
+            F_s[f''] = \frac{2}{\pi}\omega f(0) - \omega^2 F_s[f].
+        \] & \hfill &
+        \( \ds
+            F_c[f'] = \frac{2}{\pi}f(0) + \omega F_s[f];
+        \)
+        \[
+            F_c[f''] = -\frac{2}{\pi}\omega f(0) - \omega^2 F_c[f].
+        \] 
+    \end{tabular}
+\end{table}
 \newpage
