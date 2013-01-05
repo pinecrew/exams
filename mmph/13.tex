@@ -7,8 +7,8 @@
     \item линейность: \( F[af + bg] = aF[f] + bF[g] \);
     \item преобразование производных:
     \( \ds
-        \pnder{n}{u}{x} \to (\i\xi)^n\cdot F[u],\ 
-        \pnder{n}{u}{t} \to \pnder{n}{}{t} F[u];
+        \pnder{n}{u}{x} \to (\i\xi)^n\cdot F_x[u],\ 
+        \pnder{n}{u}{t} \to \pnder{n}{}{t} F_x[u];
     \)
     \item свёртка:    
     \( F[f * g] = F[f]\cdot F[g] \), где
@@ -19,24 +19,14 @@
     \]
 \end{enumerate}
 
-Рассмотрим теперь \emph{задачу о распространении тепла в бесконечном стержне},
-если задана начальная температура \( u(x, 0) = \phi(x) \):
-
-\begin{minipage}{.3\textwidth}
-    \[
-        \left\{ \begin{array}{l}
-            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
-            u(x, 0) = \phi(x).
-        \end{array} \right.
-    \]
-\end{minipage}
-\hfill
 \begin{minipage}{.67\textwidth}
+     Рассмотрим теперь \emph{задачу о распространении тепла в бесконечном стержне},
+     если задана начальная температура \( u(x, 0) = \phi(x) \).
+     
     Сделаем преобразование Фурье по переменной \( x \): \( u \to \bar{u} \).
 \end{minipage}
-
+\hfill
 \begin{minipage}{.3\textwidth}
-    Преобразованная задача:
     \[
         \left\{ \begin{array}{l}
             \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
@@ -44,9 +34,20 @@
         \end{array} \right.
     \]
 \end{minipage}
-\hfill
+
 \begin{minipage}{.67\textwidth}
+    Преобразованная задача:
+    
     Её решение: \( \ds \bar{u} = \bar{\phi}(\xi)\cdot\e^{-\alpha^2\xi^2 t} \).
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+    \[
+        \left\{ \begin{array}{l}
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
+            u(x, 0) = \phi(x).
+        \end{array} \right.
+    \]
 \end{minipage}
 
 Обратным преобразованием Фурье получаем ответ:

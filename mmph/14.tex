@@ -1,4 +1,71 @@
 \chapter{Преобразование Лапласа и его свойства. Решение задачи о
 теплопроводности в полубесконечной среде.}
 
+Интегральное преобразование \( \ds L[f] = \int\lni f(t)\e^{-st}\d t \)
+называется преобразованием Лапласа.
+
+Достаточное условие существования преобразования Лапласа: при любом \( A > 0 \)
+функция \( f(t) \) кусочно-непрерывна на \( [0, A] \); существуют постоянные \( M \), \( a \), \( T \)
+такие, что \( \ds |f(t)| \le M\e^{at} \) для всех \( t > T \). В этом случае
+преобразование Лапласа существует при всех \( s > a \).
+
+\emph{Свойства преобразования Лапласа}:
+\begin{enumerate}
+    \item Обратимость: \( \ds L^{-1}\bigl[L[f]\bigr] = f \),
+    
+    где обратное преобразование: \( \ds L^{-1}[f] = \frac{1}{2\pi\i}
+    \int\limits_{c-\i\infty}^{c+\i\infty} F(s)\e^{st}\d s \);
+    
+    \item преобразование частных производных:
+    \( \ds L_t\left[\pnder{n}{u}{t}\right] = s^nL_t[u] - \sum\limits_{k=0}^{n-1}
+    s^k u^{(n - 1 - k)} \),
+    \( \ds L_t\left[\pnder{n}{u}{x}\right] = \pnder{n}{}{x}L_t[u] \);
+    
+    \item свёртка: \( L[f*g] = L[f]\cdot L[g] \),
+    \( \ds f*g = \int\limits_0^t f(t-\tau)g(\tau)\d\tau \);
+    
+    \item линейность: \( L[af + bg] = aL[f] + bL[g] \).
+\end{enumerate}
+
+\begin{minipage}{.6\textwidth}
+    Рассмотрим \emph{задачу о теплопроводности в полубесконечной среде}.
+
+    Сделаем преобразование Лапласа по переменной \( t \): \( u \to \bar{u} \).
+        
+    Решая, получим: \( \ds \bar{u} = C_1\e^{\frac{\sqrt{s}}{\alpha}x} +
+    C_2\e^{-\frac{\sqrt{s}}{\alpha}x} + \frac{u_0}{s} \).
+
+    Подставляя в ГУ, находим: \( C_1 = 0 \), \( \ds C_2 =
+    -\frac{u_0}{s\left(1 + \frac{\sqrt{s}}{\alpha h}\right)} \), тогда:
+    \[
+        \bar{u}(x) = u_0\left(\frac{1}{s} - \frac{\e^{-\frac{\sqrt{s}}{\alpha}x}}
+        {s\left(1 + \frac{\sqrt{s}}{\alpha h}\right)}\right).
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+    \flushright
+    \[
+        \left\{ \begin{array}{l}
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\[.5em]
+            \ds \pder{u}{x}(0,t) 0 - hu(0, t) = 0; \\
+            u(x, 0) = u_0.
+        \end{array} \right.
+    \]
+    Преобразованная задача:
+    \[
+        \left\{ \begin{array}{l}
+            \ds s\bar{u}(x) - u_0 = \alpha^2\dder{\bar{u}}{x}; \\
+            \ds \der{\bar{u}}{x}(0) = h\bar{u}(0).
+        \end{array} \right.
+    \]
+\end{minipage}
+
+Сделав обратное преобразование, получим:
+\[
+    u(x, t) = u_0 - u_0\left[\erfc\left(\frac{x}{2\alpha\sqrt{t}}\right) + 
+    \erfc\left(\frac{x}{2\alpha\sqrt{t}} + \alpha h\sqrt{t}\right)\cdot
+    \e^{xh + \alpha^2h^2 t}\right].
+\]
+
 \newpage
