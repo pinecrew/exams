@@ -3,8 +3,8 @@
 Рассмотрим задачу о конвективном переносе:
 \[
     \left\{ \begin{array}{l}
-        \ds \pder{u}{t} = -v\pder{u}{x},\ x \in (0;\ +\infty); \\
-        u(0, t) = p; \\
+        \ds \pder{u}{t} = -v\pder{u}{x},\ x \in (0;\ +\infty), \\
+        u(0, t) = p, \\
         u(x, 0) = 0.
     \end{array} \right.
 \]
@@ -15,7 +15,7 @@
 Преобразованная задача:
 \[
     \left\{ \begin{array}{l}
-        \ds s\bar{u} = -v\pder{\bar{u}}{x}; \\
+        \ds s\bar{u} = -v\pder{\bar{u}}{x}, \\
         \bar{u}(0) = p/s.
     \end{array} \right.
 \]
@@ -30,7 +30,7 @@
 то есть решение может быть записано в виде:
 \[
     u(x, t) = \left\{ \begin{array}{l}
-        0, t < x/v; \\ p, t \ge x/v.
+        0,\text{ если } t < x/v, \\ p,\text{ если } t \ge x/v.
     \end{array} \right.
 \]
 \newpage
