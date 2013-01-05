@@ -18,7 +18,7 @@
 \section{Скорость}
 
 \begin{table}[h!]
-    \begin{tabular}{C{.4}m{.55\textwidth}}
+    \begin{tabular}{C{.37}m{.55\textwidth}}
         \includegraphics[width=.4\textwidth]{06_velocity} &
         Проведем в точку радиус-вектор \( \vec{r} \). Тогда, по определению:
         \[
@@ -41,17 +41,23 @@
 \der{s}{t} \), а её модуль \( \ds v = |\tilde{v}| = \left|\der{s}{t}\right| \).
 
 \section{Ускорение}
+\begin{table}[h!]
+    \begin{tabular}{C{.4}m{.55\textwidth}}
+        \includegraphics[width=.4\textwidth]{06_acceleration} &
+        По определению ускорение: \( \ds \vec{a} = \der{\vec{v}}{t} \):
+        
+        \( \ds \vec{a} = \der{}{t}\left(\vec{\tau}\cdot\der{s}{t}\right) =
+        \der{\vec{\tau}}{t}\cdot\der{s}{t} + \vec{\tau}\cdot\dder{s}{t}. \)
+        
+        Вектор \( \ds \der{\vec{\tau}}{t} = \der{\vec{\tau}}{s}\cdot\der{s}{t} \).
+        
+        Из дифференциальной геометрии \( \ds \der{\vec{\tau}}{s} = \vec{k} =
+        \vec{n}\cdot\frac{1}{\rho} \), где \( \rho \) -- радиус кривизны,
+        \( \vec{k} \) -- кривизна. 
+    \end{tabular}
+\end{table}
 
-По определению ускорение: \( \ds \vec{a} = \der{\vec{v}}{t} \):
-\( \ds
-    \vec{a} = \der{}{t}\left(\vec{\tau}\cdot\der{s}{t}\right) = \der{\tau}{t}
-    \cdot\der{s}{t} + \vec{\tau}\cdot\dder{s}{t}.
-\)
-
-Вектор \( \ds \der{\vec{\tau}}{t} = \der{\vec{\tau}}{s}\cdot\der{s}{t} \). Из
-дифференциальной геометрии \( \ds \der{\vec{\tau}}{s} = \vec{k} =
-\vec{n}\cdot\frac{1}{\rho} \), где \( \rho \) -- радиус кривизны,
-\( \vec{k} \) -- кривизна. Следовательно,
+Следовательно,
 \[
     \vec{a} = \vec{n}\cdot\frac{\left(\der{s}{t}\right)^2}{\rho} + \vec{\tau}
     \cdot\dder{s}{t} = \vec{n}\cdot\frac{v^2}{\rho}+ \vec{\tau}\cdot\dder{s}{t}.
