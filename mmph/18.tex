@@ -1,6 +1,97 @@
 \chapter{Решение одномерного волнового уравнения с помощью формулы Даламбера.
 Примеры применения формулы Даламбера в некоторых конкретных задачах.}
 
-\section{Решение одномерного волнового уравнения с помощью формулы Даламбера}
-\section{Примеры применения формулы Даламбера в некоторых конкретных задачах}
+Начнём с решения задачи Коши:
+\begin{align*}
+    \ppder{u}{t} = c^2\ppder{u}{x}, \quad x\in\Re, t > 0, \\
+    \left\{ \begin{array}{l}
+        u(x, 0) = \phi(x), \\
+        \ds \pder{u}{t}(x, 0) = \psi(x).
+    \end{array} \right.
+\end{align*}
+
+Уравнение \( \ds \ppder{u}{t} - c^2\ppder{u}{x} = 0 \) является уравнением
+гиперболического типа. Приведем его к канонiческому виду. Уравнение характеристик
+имеет вид: \( \d x^2 - c^2\d t^2 = 0 \), и далее:
+\[
+    \left[ \begin{array}{l}
+        \d x - c\d t = 0 \\
+        \d x + c\d t = 0
+    \end{array} \right.
+    \quad\Leftrightarrow\quad
+    \left[ \begin{array}{l}
+        x - ct = C_1 = \xi \\
+        x + ct = C_2 = \eta
+    \end{array} \right.
+\]
+
+В координатах \( \xi \) и \( \eta \) уравнение приобретает канонический вид:
+\( \ds \pcder{u}{\xi}{\eta} = 0 \).
+Дважды проинтегрировав его, найдем, что \( u = f(\xi) + g(\eta) =
+f(x - ct) + g(x + ct) \).
+
+Теперь воспользуемся начальными условиями:
+\[
+    \left\{ \begin{array}{l}
+        f(x) + g(x) = \phi(x), \\
+        -cf'(x) + cg'(x) = \psi,
+    \end{array} \right.
+    \quad\Leftrightarrow\quad
+    \left\{ \begin{array}{l}
+        f(x) + g(x) = \phi(x), \\
+        \ds -f(x) + g(x) = \frac{1}{c}\int\limits_{x_0}^x\psi(\zeta)\d\zeta + K.
+    \end{array} \right.
+\]
+
+\begin{align*}
+    \text{Отсюда, }\quad & f(x) = \frac{1}{2}\phi(x) -
+    \frac{1}{2c}\int\limits_{x_0}^x \psi(\zeta)\d\zeta - \frac{K}{2}, \\
+    & g(x) = \frac{1}{2}\phi(x) + \frac{1}{2c}\int\limits_{x_0}^x
+    \psi(\zeta)\d\zeta - \frac{K}{2}.
+\end{align*}
+
+Тогда решение имеет вид
+\[
+    u(x, t) = \frac{1}{2}\bigl[\phi(x - ct) + \phi(x + ct)\bigr] + \frac{1}{2c}
+    \int\limits_{x - ct}^{x + ct} \psi(\zeta)\d\zeta.
+\]
+
+Полученное выражение называется формулой д'Аламбера.
+
+\section{Примеры применения формулы д'Аламбера}
+\begin{enumerate}
+    \item Рассмотрим начальные условия вида 
+    \[
+        \left\{ \begin{array}{l}
+            u(x, 0) = \sin x, \\
+            \ds \der{u}{t}(x, 0) = 0.
+        \end{array} \right.
+    \]
+    
+    По формуле д'Аламбера получаем решение:
+    \[
+        u(x, t) = \frac{1}{2}\bigl[\sin(x - ct) + \sin(x + ct)\bigr],
+    \]
+    которое можно интерпретировать так: начальное смещение струны
+    \( u(x, 0) = \sin x \) делится на две одинаковые части, и каждая из частей
+    распространяется со скоростью \( c \) в виде бегущих волн.
+    Одна из волн перемещается слева направо, а вторая -- в противоположном
+    направлении.
+    
+    \item Рассмотрим начальные условия вида 
+    \[
+        \left\{ \begin{array}{l}
+            u(x, 0) = 0, \\
+            \ds \der{u}{t}(x, 0) = \sin x.
+        \end{array} \right.
+    \]
+    
+    По формуле д'Аламбера получаем решение:
+    \[
+        u(x, t) = \frac{1}{2c}\int\limits_{x - ct}^{x + ct} \sin\zeta\d\zeta =
+        \frac{1}{2}\bigl[\cos(x - ct) - \cos(x + ct)\bigr],
+    \]
+    представляющее собой сумму двух бегущих косинусоидальных волн.
+\end{enumerate}
+
 \newpage
