@@ -1,4 +1,62 @@
 \chapter{Колебания балки (ДУЧП IV).}
 
-\section{Колебания балки (ДУЧП IV)}
+Колебания балки описываются ДУЧП четвертого порядка вида
+\[
+    \ppder{u}{t} = -\alpha^2\pnder{4}{u}{x}.
+\]
+
+Рассмотрим колебания свободно опирающейся балки. Из-за того, что балка опирается
+свободно, то во-первых \( u(0, t) = u(l, t) = 0 \), а во-вторых, так как концы
+не изгибаются, \( \ds \ppder{u}{x}(0, t) = \ppder{u}{x}(l, t) = 0 \). Получаем
+смешанную задачу:
+
+\begin{minipage}{.43\textwidth}
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \ds \ppder{u}{t} = -\alpha^2\pnder{4}{u}{x}, \\[.4em]
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(0, t) = u(l, t) = 0, \\
+            \ds \ppder{u}{x}(0, t) = \ppder{u}{x}(l, t) = 0;
+        \end{array} \right. \\[.4em]
+        \text{НУ:} & \left\{ \begin{array}{l}
+            u(x, 0) = \phi(x), \\
+            \ds \pder{u}{t}(x, 0) = \psi(x); 
+        \end{array} \right.
+    \end{array} \right\}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.47\textwidth}
+    Воспользуемся методом разделения переменных и будем искать только
+    периодические решения:
+    \[
+        u(x,t) = X(x)\cdot\bigl(a\cos\omega t + b\sin\omega t\bigr).
+    \]
+\end{minipage}
+
+\vspace*{.4em}
+Подставив в ДУЧП, получаем задачу Штурма-Лиувилля:
+\[
+    \left. \begin{array}{c}
+    	\ds X^{(4)} - \frac{\omega^2}{\alpha^2} X = 0, \\
+    	\left\{ \begin{array}{l}
+    		X(0) = X(l) = 0, \\
+    		X''(0) = X''(l) = 0;
+    	\end{array} \right.
+    \end{array} \right| \Rightarrow X_n = \sin\sqrt{\frac{\omega_n}{\alpha}}x,
+    \text{ где } \omega_n = \alpha\left(\frac{\pi n}{l}\right)^2.
+\]
+
+Таким образом, \( \ds u(x, t) = \sum_{n=0}^\infty \left[a_n\cos\ 
+\alpha\left(\frac{\pi n}{l}\right)^2t + b_n\sin\ 
+\alpha\left(\frac{\pi n}{l}\right)^2t\right]\cdot
+\sin\left(\frac{\pi nx}{l}\right) \).
+
+Коэффициенты \( a_n \) и \( b_n \) определяются с помощью начальных условий:
+\[
+    a_n = \frac{2}{l} \int\limits_0^l \phi(x)\sin
+    \left(\frac{\pi nx}{l}\right)\d x, \quad
+    b_n = \frac{2l}{\alpha\pi^2 n^2} \int\limits_0^l \psi(x)\sin
+    \left(\frac{\pi nx}{l}\right)\d x.
+\]
 \newpage
