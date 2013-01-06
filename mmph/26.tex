@@ -1,6 +1,84 @@
 \chapter{Конечные синус- и косинус-преобразования Фурье. Решение краевой задачи
 с неоднородным волновым уравнением.}
 
-\section{Конечные синус- и косинус-преобразования Фурье}
-\section{Решение краевой задачи с неоднородным волновым уравнением}
+Конечные синус- и косинус-преобразования определяются следующим образом:
+\[
+    S_n = \frac{2}{l} \int\limits_0^l f(x)\cdot\sin\frac{\pi nx}{l}\d x
+    \quad \text{и} \quad
+    C_n = \frac{2}{l} \int\limits_0^l f(x)\cdot\cos\frac{\pi nx}{l}\d x,
+\]
+а обратные преобразования:
+\[
+    f(x) = \sum_{n=1}^\infty S_n\sin\frac{\pi nx}{l}
+    \quad \text{и} \quad
+    f(x) = \frac{C_0}{2} + \sum_{n=1}^\infty C_n\cos\frac{\pi nx}{l}.
+\]
+
+Очевидно, что эти преобразования -- ни что иное, как коэффициенты \( b_n \) и
+\( a_n \) в разложении функции в ряд Фурье, а обратные преобразования -- это
+ряды Фурье по синусам и косинусам.
+
+Для решения ДУЧП полезно знать как преобразуются производные при описанных выше
+преобразованиях:
+\begin{align*}
+    S_x\left[\pnder{m}{u}{t}\right] & = \nder{m}{}{t}S_x[u], \quad
+    S_x\left[\ppder{u}{x}\right] = -\left(\frac{\pi n}{l}\right)^2 S_x[u] +
+    \frac{2\pi n}{l^2}\Bigl(u(0, t) + (-1)^{n+1}u(l, t)\Bigr); \\
+    C_x\left[\pnder{m}{u}{t}\right] & = \nder{m}{}{t}C_x[u], \quad
+    C_x\left[\ppder{u}{x}\right] = -\left(\frac{\pi n}{l}\right)^2 C_x[u] -
+    \frac{2}{l}\left(\pder{u}{x}(0, t) + (-1)^{n+1}\pder{u}{x}(l, t)\right).
+\end{align*}
+
+Решим теперь краевую задачу с неоднородным волновым уравнением:
+
+\begin{minipage}{.3\textwidth}
+    \[
+        \left. \begin{array}{l}
+            \ds \ppder{u}{t} = \ppder{u}{x} + \sin\pi x, \\[.4em]
+            \left\{ \begin{array}{l}
+                u(0, t) = 0, \\
+                u(1, t) = 0,
+            \end{array} \right. \\
+            \left\{ \begin{array}{l}
+                u(x, 0) = 1, \\
+                \ds \pder{u}{t}(x, 0) = 0,.
+            \end{array} \right.
+        \end{array} \right\}
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}{.65\textwidth}
+    Воспользуемся \( \sin \)-преобразованием по переменной \( x \), получим:
+    \[
+        \dder{S_n}{t} = -(\pi n)^2 S_n + (2\pi n)(0 + (-1)^{n+1}\cdot 0) + \delta_{1n},
+    \]
+    где \( \delta_{ij} \) -- символ Кронекера.
+
+    Получаем семейство задач Коши.
+\end{minipage}
+
+\begin{align*}
+    \text{При } n = 1 \text{ имеем: } & S_1'' + \pi^2S_1 = 1, \quad S_1'(0) = 0,
+    \quad S_1(0) = \frac{4}{\pi}; \\
+    & S_1(t) = \left(\frac{4}{\pi} - \frac{1}{\pi^2}\right)\cdot\cos(\pi t) +
+    \frac{1}{\pi^2}. \\
+    \text{При } n \ne 1 \text{ имеем: } & S_n'' + (\pi n)^2 S_n = 1,
+    \quad S_n'(0) = 0, \quad S_n(0) =
+    \left\{ \begin{array}{rl}
+        \ds \frac{4}{\pi n}, & \text{ при нечётном } n, \\
+        0, & \text{ при чётном } n;
+    \end{array} \right. \\
+    & S_n(t) = \left\{ \begin{array}{rl}
+        \ds \frac{4}{\pi n}\cos(\pi nt), & \text{ при нечётном } n, \\
+        0, & \text{ при чётном } n.
+    \end{array} \right.
+\end{align*}
+
+В итоге:
+\[
+    u(x, t) = \left[\left(\frac{4}{\pi} - \frac{1}{\pi^2}\right)\cos(\pi t)
+    + \frac{1}{\pi^2}\right]\sin(\pi x) + \frac{4}{\pi}\sum_{n=1}^\infty
+    \frac{1}{2n+1}\cos[(2n + 1)\pi t]\sin[(2n + 1)\pi x].
+\]
+
 \newpage
