@@ -1,6 +1,152 @@
 \chapter{Переход к безразмерным переменным на примере диффузионной задачи.
 Пример преобразования гиперболической задачи к безразмерному виду.}
 
-\section{Переход к безразмерным переменным на примере диффузионной задачи}
-\section{Пример преобразования гиперболической задачи к безразмерному виду}
+Рассмотрим смешанную \emph{диффузионную задачу} для стержня:
+
+\begin{minipage}{.35\textwidth}
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}, \\[.4em]
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(0, t) = T_1, \\
+            u(l, t) = T_2,
+        \end{array} \right. \\
+        \text{НУ:} & \ds u(x, 0) = T_0\sin\frac{\pi x}{l}.
+    \end{array} \right\}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.58\textwidth}
+    Сделаем переход к безразмерным величинам:
+    \[
+        u \to \u, \qquad x \to \xi, \qquad t \to \tau.
+    \]
+    
+    Зависимую переменную будем преобразовывать исходя из граничных условий.
+    Потребуем, чтобы левое обратилось в 0, а правое в 1:
+    \( \u(0, t) = 0 \), \( \u(l, t) = 1 \).
+\end{minipage}
+
+\begin{minipage}{.57\textwidth}
+    Это будет выполняться, если \( \u(x, t) = \cfrac{u(x, t) - T_1}{T_2 - T_1} \).
+    Таким образом, задача преобразуется к виду:
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+\[
+    \left\{ \begin{array}{l}
+        \ds \pder{\u}{t} = \alpha^2\ppder{\u}{x}, \\[.4em]
+        \left\{ \begin{array}{l}
+            \u(0, t) = 0, \\
+            \u(l, t) = 1,
+        \end{array} \right. \\
+        \ds \u(x, 0) = \frac{T_0\sin\frac{\pi x}{l}- T_1}{T_2 - T_1}.
+    \end{array} \right.
+\]
+\end{minipage}
+
+\begin{minipage}{.6\textwidth}
+    Теперь преобразуем переменную \( x \). Имеет смысл привести длину отрезка,
+    на котором решается задача, к 1, то есть \( \xi~=~x/l \). Теперь задача
+    может быть записана в виде:
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+\[
+    \left\{ \begin{array}{l}
+        \ds \pder{\u}{t} = \frac{\alpha^2}{l^2}\ppder{\u}{\xi}, \\[.4em]
+        \left\{ \begin{array}{l}
+            \u(0, t) = 0, \\
+            \u(1, t) = 1,
+        \end{array} \right. \\
+        \ds \u(\xi, 0) = \frac{T_0\sin\pi\xi - T_1}{T_2 - T_1}.
+    \end{array} \right.
+\]
+\end{minipage}
+
+\begin{minipage}{.6\textwidth}
+Наконец, преобразуем \( t \to \tau \) так, чтобы обезразмерить запись ДУЧП, то
+есть
+\[
+    \pder{\u}{\tau} = \ppder{\u}{\xi}, \text{ отсюда }
+    \tau = \frac{\alpha^2}{l^2}t.
+\]
+В итоге, имеем безразмерный вид диффузионной задачи,
+где
+\[
+    \u = \frac{u(x, t) - T_1}{T_2 - T_1}, \quad \xi = x/l, \quad
+    \tau = \frac{\alpha^2}{l^2}t.
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+\[
+    \left\{ \begin{array}{l}
+        \ds \pder{\u}{\tau} = \ppder{\u}{\xi}, \\[.4em]
+        \left\{ \begin{array}{l}
+            \u(0, \tau) = 0, \\
+            \u(1, \tau) = 1,
+        \end{array} \right. \\
+        \ds \u(\xi, 0) = \frac{T_0\sin\pi\xi - T_1}{T_2 - T_1}.
+    \end{array} \right.
+\]
+\end{minipage}
+
+\newpage
+А сейчас рассмотрим пример преобразования \emph{гиперболической задачи} к
+безразмерному виду.
+
+\begin{minipage}{.4\textwidth}
+\[
+    \left. \begin{array}{l}
+        \ds \ppder{u}{t} = c^2\ppder{u}{x}, \\[.4em]
+        u(0, t) = u(l, t) = 0, \\
+        \left\{ \begin{array}{l}
+            \ds u(x, 0) = \sin\frac{\pi x}{l} + \frac{1}{2}
+            \sin\frac{3\pi x}{l}, \\[.4em]
+            \ds \pder{u}{t}(x, 0) = 0.
+        \end{array} \right.
+    \end{array} \right\}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.53\textwidth}
+    Как видно, это задача о струне с закрепленными концами. Так как граничные
+    условия уже безразмерные, то нужно преобразовать только \( x \) и \( t \).
+    
+    Эти преобразования имеют вид:
+    \[
+        \xi = x/l \text{ и } \tau = ct/l.
+    \]
+\end{minipage}
+
+\vspace*{1em}
+Преобразованная задача имеет вид:
+
+\begin{minipage}{.4\textwidth}
+\[
+    \left. \begin{array}{l}
+        \ds \ppder{u}{\tau} = \ppder{u}{\xi}, \\[.4em]
+        u(0, \tau) = u(1, \tau) = 0, \\
+        \left\{ \begin{array}{l}
+            \ds u(\xi, 0) = \sin\pi\xi + \frac{1}{2}\sin\frac3\pi\xi, \\[.4em]
+            \ds \pder{u}{\tau}(\xi, 0) = 0.
+        \end{array} \right.
+    \end{array} \right\}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.55\textwidth}
+    \vspace*{.7em}
+    Её решение нетрудно найти:
+    \[
+        u(\xi, \tau) = \sin\pi\xi\cos\pi\tau +
+        \frac{1}{2}\sin3\pi\xi\cos3\pi\tau.
+    \]
+    Возвращаясь к исходной задаче, получаем ответ:
+    \[
+        u(x, t) = \sin\frac{\pi x}{l}\cos\frac{\pi ct}{l} +
+        \frac{1}{2}\sin\frac{3\pi x}{l}\cos\frac{3\pi ct}{l}.
+    \]
+\end{minipage}
 \newpage
