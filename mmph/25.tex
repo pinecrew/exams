@@ -1,4 +1,66 @@
 \chapter{Волновое уравнение в свободном пространстве (2- и 3-мерные задачи).}
 
-\section{Волновое уравнение в свободном пространстве (2- и 3-мерные задачи)}
+\section{Волны в трёхмерном пространстве}
+Рассмотрим задачу:
+
+\begin{minipage}{.33\textwidth}
+    \begin{align*}
+        & \ppder{u}{t} =
+        c^2\left(\ppder{u}{x} + \ppder{u}{y} + \ppder{u}{z}\right), \\
+        & \left\{ \begin{array}{l}
+            u(\vec{r}, 0) = \phi(\vec{r}), \\
+            \ds \pder{u}{t}(\vec{r}, 0) = \psi(\vec{r}).
+        \end{array} \right.
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{.6\textwidth}
+    Примем, для простоты, \( \phi(\vec{r}) \equiv 0 \).
+    
+    Оказывается, что решение данной задачи представимо в виде
+    \[
+        u(\vec{r}, t) = t\midnum{\psi},
+    \]
+    где \( \midnum{\psi} \) -- среднее значение начального распределения
+    \( \psi \) по сфере радиуса \( ct \) с центром в точке \( (x, y, z) \):
+\end{minipage}
+\[
+    \midnum{\psi} = \frac{1}{4\pi c^2t^2} \int\limits_0^\pi
+    \int\limits_0^{2\pi} \psi(x + ct\sin\theta\cos\alpha, y + ct\sin\theta
+    \sin\alpha, z + ct\cos\theta)c^2t^2\sin\theta\d\theta\d\alpha.
+\]
+
+Для получения полного решения рассмотрим теперь задачу с
+\( \phi(\vec{r}) \neq 0 \) и \( \psi(\vec{r}) \equiv 0 \). По теореме Стокса,
+решение этой задачи может быть найдено дифференцированием решения предыдущей
+задачи: \( \ds u(\vec{r}, t) = \pder{}{t}\Bigl(t\cdot\midnum{\phi}\Bigr) \).
+
+Тогда решение исходной задачи может быть записано в виде:
+\( \ds u(\vec{r}, t) = t\midnum{\psi} + \pder{}{t}\Bigl(t\midnum{\phi}\Bigr) \).
+
+Полученная формула называется формулой Пуассона и является обобщением формулы
+д'Аламбера на трёхмерный случай. Физической интерпретацией формулы Пуассона
+является принцип Гюйгенса: решение, распространяющееся из области начального
+возмущения, всегда имеет резко очерченный передний фронт, а задний фронт резко
+очерчен только в пространствах нечетной размерности: 3, 5, 7, \ldots
+
+\section{Волны в двумерном пространстве}
+
+Рассмотрим задачу:
+\begin{align*}
+    & \ppder{u}{t} =
+    c^2\left(\ppder{u}{x} + \ppder{u}{y} + \ppder{u}{z}\right), \\
+    & \left\{ \begin{array}{l}
+        u(\vec{r}, 0) = \phi(\vec{r}), \\
+        \ds \pder{u}{t}(\vec{r}, 0) = \psi(\vec{r}).
+    \end{array} \right.
+\end{align*}
+
+Применяя формулу Пуассона в двумерном случае, получим:
+\[
+    u(x, y, t) = \frac{1}{2\pi c}\left[ \int\limits_0^{2\pi}\int\limits_0^{ct}
+    \frac{\psi(r, \alpha)}{\sqrt{c^2t^2 - r^2}}r\d r\d\alpha + \pder{}{t}\left(
+    \frac{1}{2\pi c}\int\limits_0^{2\pi}\int\limits_0^{ct}\frac{\phi(r, \alpha)}
+    {\sqrt{c^2t^2 - r^2}}r\d r\d\alpha\right)\right].
+\]
 \newpage
