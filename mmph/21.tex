@@ -3,4 +3,73 @@
 
 \section{Решение задачи о колебаниях ограниченной струны методом разделения
 переменных}
+
+\begin{minipage}{.4\textwidth}
+\[
+    \left. \begin{array}{rl}
+        \text{ДУЧП:} & \ds \pder{u}{t} = c^2\ppder{u}{x},\quad x\in(0, l); 
+        \vspace*{.4em} \\
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(0, t) = 0, \\
+            u(l, t) = 0; 
+        \end{array} \right. \\
+        \text{ГУ:} & \left\{ \begin{array}{l}
+            u(x, 0) = \phi(x), \\
+            \pder{u}{t}(x, 0) = \psi(x); 
+        \end{array} \right. \\
+    \end{array} \right\}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{.56\textwidth}
+    Воспользуемся методом разделения переменных. Будем искать 
+    решение вида: \( u(x,t) = X(x)\cdot T(t) \), называемые 
+    стоячими волнами. 
+
+    Подстановкой в ДУЧП получаем:
+    \[ \frac{T''}{c^2T} = \frac{X''}{X} = -k^2 \]
+    Получаем ОДУ для \( T \): \( T'' + \lambda^2 c^2 T = 0 \) 
+    и задачу Штурма-Лиувилля для \( X \):
+\end{minipage}
+
+\[
+    \left. \begin{array}{rl}
+    	X'' + k^2 X = 0,\quad x\in[0, l] \\
+    	\left\{ \begin{array}{l}
+    		X(0) = 0, \\
+    		X(l) = 0; \\
+    	\end{array} \right.
+    \end{array} \right| \Rightarrow X_n = \sin(k_n x), 
+    \text{ где } k_n = \frac{\pi n}{l}
+\]
+
+\[ 
+	T_n = a_n\cos(\omega_n t) + b_n\sin(\omega_n t) \text{, где } 
+	\omega_n = k_n\cdot c
+\]
+
+Таким образом, 
+\[ 
+	u(x, t) = \sum_{n=1}^{\infty}T_n\cdot X_n = \sum_{n=1}^{\infty}
+	\left( a_n\cos\frac{\pi nc}{l}t + b_n\sin\frac{\pi nc}{l}t \right)
+	\cdot\sin\frac{\pi n}{l}x
+\]
+
+Теперь воспользуемся начальными условиями:
+\[ 
+	u(x, 0) = \sum_{n=1}^{\infty} a_n\sin\frac{\pi n}{l}x = \phi(x) 
+	\Rightarrow a_n = \frac{2}{l} \int_0^l \phi(x)\cdot\sin\frac{\pi n}{l}xdx
+\]
+\[ 
+	u(x, 0) = \sum_{n=1}^{\infty} \frac{\pi nc}{l} b_n\sin\frac{\pi n}{l}x = 
+	\psi(x) \Rightarrow b_n = \frac{2}{\pi nc} 
+	\int_0^l \phi(x)\cdot\sin\frac{\pi n}{l}xdx
+\]
+В итоге, 
+\[
+	u(x, t) = \sum_{n=1}^{\infty}\left( a_n\cos\frac{\pi nc}{l}t + 
+	b_n\sin\frac{\pi nc}{l}t \right)\sin\frac{\pi n}{l}x
+\]
+где \( a_n \) и \( b_n \) определяются по приведенным выше формулам
+
 \newpage
