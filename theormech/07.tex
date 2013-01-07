@@ -2,4 +2,75 @@
 Неопределенные множители Лагранжа. Полная система уравнений, описывающая
 движение механической системы с избыточными координатами. Примеры применения.}
 
+В основу вывода уравнений Лагранжа 1-го рода положим общее уравнение динамики:
+\[
+    \sum\limits_{j=1}^N \Bigl(-m_j\ddot{\vec{r}}_j + \vec{F}^a_j + \vec{R}_j
+    \Bigr)\cdot\delta\vec{r}_j = 0,
+\]
+где \( m_j\ddot{\vec{r}}_j \) -- силы инерции, \( \vec{F}^a_j \) -- активные
+силы, \( \vec{R}_j \) -- связи.
+
+% преобразования
+
+В результате преобразований в обобщенных координатах \( q_1 \), \( q_2 \),
+\ldots, \( q_k \) (\( k \) не равно числу степеней свободы \( s \)), получим:
+\[
+    \sum\limits_{i=1}^k \left[\der{}{t}\left(\pder{T}{\dot{q}_i}\right) -
+    \pder{T}{q_i} - Q_i - D_i\right]\delta q_i = 0,
+\]
+где \( Q_i \) -- обобщенные активные силы, \( D_i \) -- обобщенные реакции
+связей. Так как выражение в скобках и \( \delta q_i \) независимы, то:
+\[
+    \der{}{t}\left(\pder{T}{\dot{q}_i}\right) - \pder{T}{q_i} - Q_i - D_i = 0.
+\]
+
+% далее пошел набор формул
+
+\[
+    f_j(q_1, q_2, \ldots, q_k, t) = 0, \quad \text{ где } j = 1, 2, \ldots, k-s.
+\]
+
+Условие идеальности связей: \( \ds \sum_{l=1}^k D_l\delta q_l = 0 \).
+Подставляем \( D_l \), получаем:
+\[
+    \sum\limits_{l=1}^k \pder{f_j}{q_l}\delta q_l = 0.
+\]
+
+Получаем систему уравнений:
+\[
+    \left\{ \begin{array}{l}
+       \ds \pder{f_1}{q_1}\delta q_1 + \ldots \pder{f_1}{q_k}\delta q_k = 0, \\
+       \ds \pder{f_2}{q_1}\delta q_1 + \ldots \pder{f_2}{q_k}\delta q_k = 0, \\
+       \ldots \\
+       \ds \pder{f_{k-s}}{q_1}\delta q_1 + \ldots \pder{f_{k-s}}{q_k}\delta
+       q_k = 0, \\
+       D_1\delta q_1 + \ldots + D_k \delta q_k = 0.
+    \end{array} \right.
+\]
+
+Домножим первые \( k - s \) уравнений на \( \lambda_1(t) \), \( \lambda_2(t) \),
+\ldots, \( \lambda_{k-s}(t) \), называемые множителями Лагранжа, и вычтем их из
+последнего:
+\[
+    \left[D_1 - \sum_{n=1}^{k-s}\lambda_n\pder{f_n}{q_1}\right]\delta q_1 +
+    \left[D_2 - \sum_{n=1}^{k-s}\lambda_n\pder{f_n}{q_2}\right]\delta q_2 +
+    \ldots +
+    \left[D_k - \sum_{n=1}^{k-s}\lambda_n\pder{f_n}{q_k}\right]\delta q_k = 0.
+\]
+
+Так как \( \delta q_i \) не зависят от выражений в скобках, то видно, что
+выражения в скобках должны быть равны нулю, откуда
+\[
+    D_m = \sum_{n=1}^{k-s} \lambda_n \pder{f_n}{q_m}.
+\]
+
+В итоге, получаем систему уравнений:
+\[
+    \left\{ \begin{array}{l}
+        \ds \der{}{t}\left(\pder{T}{\dot{q}_i}\right) - \pder{T}{q_i} =
+        Q_i + \sum_{n=1}^{k-s} \lambda_n\pder{f_n}{q_i}; \\
+        f_j(q_1, q_2, \ldots, q_k, t) = 0, \quad j = 1, 2, \ldots, k - s.
+    \end{array} \right.
+\]
+
 \newpage
