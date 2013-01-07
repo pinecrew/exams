@@ -1,6 +1,90 @@
 \chapter{Системы ДУЧП. Решение простейшей линейной системы.}
 
-\section{Система ДУЧП}
-\section{Решение простейшей линейной системы}
+Рассмотрим задачу Коши для системы, содержащей два уравнения и два начальных
+условия:
+\[
+    \left\{ \begin{array}{rl}
+        \ds \text{ДУЧП 1 } & \pder{u_1}{t} + 8\pder{u_2}{x} = 0, \\[.4em]
+        \ds \text{ДУЧП 2 } & \pder{u_2}{t} + 2\pder{u_1}{x} = 0, \\
+        \text{НУ 1 } & u_1(x, 0) = f(x), \\
+        \text{НУ 2 } & u_2(x, 0) = g(x).
+    \end{array} \right.
+\]
+
+Запишем эту же систему уравнений в матричной форме:
+\[
+    \begin{bmatrix} \ds \pder{u_1}{t} \\[.6em] \ds \pder{u_2}{t} \end{bmatrix} +
+    \begin{bmatrix} 0 & 8 \\[-.5em] 2 & 0 \end{bmatrix}
+    \begin{bmatrix} \ds \pder{u_1}{x} \\[.6em] \ds \pder{u_2}{x} \end{bmatrix} =
+    \begin{bmatrix} 0 \\[-.5em] 0 \end{bmatrix}
+\]
+или \( u'_t + Au'_x = 0 \), где
+\[
+    A = \begin{bmatrix} 0 & 8 \\[-.5em] 2 & 0 \end{bmatrix}, \quad
+    u'_t =
+    \begin{bmatrix} \ds \pder{u_1}{t} \\[.6em] \ds \pder{u_2}{t} \end{bmatrix},
+    \quad u'_x =
+    \begin{bmatrix} \ds \pder{u_1}{x} \\[.6em] \ds \pder{u_2}{x} \end{bmatrix},
+    \quad 0 = \begin{bmatrix} 0 \\[-.5em] 0 \end{bmatrix}.
+\]
+
+Введем новые неизвестные функции
+\( \ds v = \begin{bmatrix} v_1 \\[-.5em] v_2 \end{bmatrix} \)
+с помощью преобразования \( u = Pv \), где \( P \) -- матрица, по столбцам
+которой стоят собственные векторы матрицы \( A \). Продифференцировав обе части
+этого соотношения, получаем
+\[
+    \pder{u}{t} = P\pder{v}{t}, \quad \pder{u}{x} = P\pder{v}{x}.
+\]
+
+Подставляя эти соотношения в систему уравнений получаем: \( Pv'_t + APv'_x = 0 \).
+
+Если умножить обе части последнего соотношения на обратную к \( P \) матрицу
+\( P^{-1} \), то получим \( v'_t + P^{-1}APv'_x = 0 \), или
+\[
+    v'_t + \Lambda v_x = 0,\quad \text{ где }
+    \Lambda = \begin{bmatrix} 4 & 0 \\[-.5em] 0 & -4 \end{bmatrix}.
+\]
+
+Получилась система из двух несвязанных уравнений, которые можно решать
+независимо:
+\[
+    \pder{v_1}{t} + 4\pder{v_1}{x} = 0,\quad \pder{v_2}{t} - 4\pder{v_2}{x} = 0.
+\]
+Как известно, решениями этих уравнений являются бегущие волны:
+\[
+    v_1(x, t) = \phi(x - 4t),\quad v_2(x, t) = \psi(x + 4t),
+\]
+где \( \phi \) и \( \psi \) -- произвольные дифференцируемые функции.
+
+Теперь находим \( u \) из соотношения \( u = Pv \):
+\[
+    u = \begin{bmatrix} 2 & -2 \\[-.5em] 1 & 1 \end{bmatrix}
+    \begin{bmatrix} v_1 \\[-.5em] v_2 \end{bmatrix} =
+    \begin{bmatrix} 2 & -2 \\[-.5em] 1 & 1 \end{bmatrix}
+    \begin{bmatrix} \phi(x - 4t) \\[-.5em] \psi(x + 4t) \end{bmatrix} =
+    \begin{bmatrix} 2\phi(x-4t) - 2\psi(x+4t) \\[-.5em]
+    \phi(x-4t) + \psi(x+4t) \end{bmatrix}.
+\]
+
+Таким образом, общее решение системы:
+\begin{align*}
+    & u_1(x, t) = 2\phi(x-4t) - 2\psi(x+4t), \\
+    & u_2(x, t) = \phi(x-4t) + \psi(x+4t).
+\end{align*}
+
+Подставляя его в начальные условия, получаем:
+\[
+    \phi(x) = \frac{1}{4}\bigl[f(x) + 2g(x)\bigr], \quad
+    \psi(x) = \frac{1}{4}\bigl[2g(x) - f(x)\bigr].
+\]
+
+Окончательно:
+\begin{align*}
+    u_1(x, t) = 2\phi(x-4t) - 2\psi(x+4t) &= \frac{1}{2}\bigl[f(x-4t) + 2g(x-4t)
+    \bigr] - \frac{1}{2}\bigl[2g(x+4t) - f(x+4t)\bigr], \\
+    u_2(x, t) = \phi(x-4t) + \psi(x+4t) &= \frac{1}{4}\bigl[f(x-4t) + 2g(x-4t)
+    \bigr] + \frac{1}{4}\bigl[2g(x+4t) - f(x+4t)\bigr]. \\
+\end{align*}
 
 \newpage
