@@ -6,11 +6,11 @@
 из концов:
 \[
     \left. \begin{array}{rl}
-        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}, 
         \vspace*{.4em} \\
         \text{ГУ:} & \left\{ \begin{array}{l}
             u(0, t) = 0, \\
-            u'_x(1, t) + hu(t) = 0; 
+            u'_x(1, t) + hu(t) = 0,
         \end{array} \right. \\
         \text{НУ:} & u(x, 0) = \phi(x).
     \end{array} \right\}
@@ -51,25 +51,25 @@
     
     Общие решения этих уравнений:
     \[
-        X = A\sin\lambda x + B\cos\lambda x, \quad T = \e^{-\lambda^2\alpha^2 t}.
+        X = a\cos\lambda x + b\sin\lambda x, \quad T = \e^{-\lambda^2\alpha^2 t}.
     \]
 
     Получаем, что
     \[
-        u = (A\sin\lambda x + B\cos\lambda x)\e^{-\lambda^2\alpha^2 t}.
+        u = (a\cos\lambda x + b\sin\lambda x)\e^{-\lambda^2\alpha^2 t}.
     \]
 
     Найденное решение должно удовлетворять граничным условиям:
     \begin{align*}
-        & u(0, t) = 0 \Rightarrow A\sin0 + B\cos0 = 0 \Rightarrow B = 0; \\
-        & u'_x(1, t) + hu(1, t) = 0 \Rightarrow A\lambda\cos\lambda +
-        hA\sin\lambda = 0 \Rightarrow \tg\lambda = -\lambda/h.
+        & u(0, t) = 0 \Rightarrow a\cos0 + b\sin0 = 0 \Rightarrow a = 0; \\
+        & u'_x(1, t) + hu(1, t) = 0 \Rightarrow b\lambda\cos\lambda +
+        hb\sin\lambda = 0 \Rightarrow \tg\lambda = -\lambda/h.
     \end{align*}
     
     Значения \( \lambda_1 \), \( \lambda_2 \), \ldots принято называть
     собственными значениями краевой задачи
     \begin{align*}
-        & X'' + \lambda^2 X = 0; \\
+        & X'' + \lambda^2 X = 0, \\
         & \left\{ \begin{array}{l}
             X(0) = 0, \\
             X'(1) + hX(1) = 0.
@@ -90,22 +90,22 @@
     каждое из которых удовлетворяет ДУ и ГУ, а общее решение задачи получаем в
     виде:
     \[
-        u = \sum\limits_{n=1}^\infty A_nX_n(x)T_n(t) = \sum\limits_{n=1}^\infty
-        A_n\e^{-(\lambda_n\alpha)^2t}\sin(\lambda_nx).
+        u = \sum\limits_{n=1}^\infty b_nX_n(x)T_n(t) = \sum\limits_{n=1}^\infty
+        b_n\e^{-(\lambda_n\alpha)^2t}\sin(\lambda_nx).
     \]
     
-    Коэффициенты \( A_n \) должны определяться из условия
+    Коэффициенты \( b_n \) определяются из условия
     \[
-        u(x, 0) = x = \sum\limits_{n=1}^\infty A_n\sin(\lambda_nx).
+        u(x, 0) = x = \sum\limits_{n=1}^\infty b_n\sin(\lambda_nx).
     \]
     
     \item \emph{Разложение начального условия в ряд по собственным функциям}.
     
     Умножим обе части последнего соотношения на \( \sin(\lambda_mx) \) и
-    проинтегрируем от 0 до 1. Разрешая относительно \( A_m \) и заменяя \( m \)
+    проинтегрируем от~0~до~1. Разрешая относительно \( b_m \) и заменяя \( m \)
     на \( n \), получаем искомый результат:
     \[
-        A_n = \frac{2\lambda_n}{\lambda_n - \sin\lambda_n\cos\lambda_n}
+        b_n = \frac{2\lambda_n}{\lambda_n - \sin\lambda_n\cos\lambda_n}
         \int\limits_0^1 \xi\sin(\lambda_n\xi)\d\xi.
     \]
 \end{enumerate}
@@ -114,7 +114,7 @@
 \begin{multicols}{2}
 \vspace*{-4em}
 \begin{align*}
-    & [p(x)\cdot y']' - q(x)\cdot y + \lambda r(x)\cdot y = 0; \\
+    & [p(x)\cdot y']' - q(x)\cdot y + \lambda r(x)\cdot y = 0 ,\\
     & \left\{ \begin{array}{l}
         \alpha_1 y(0) + \beta_1 y'(0) = 0, \\
         \alpha_2 y(1) + \beta_2 y'(1) = 0.

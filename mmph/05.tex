@@ -7,11 +7,11 @@
 \begin{minipage}{.4\textwidth}
 \[
     \left. \begin{array}{rl}
-        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x}; 
+        \text{ДУЧП:} & \ds \pder{u}{t} = \alpha^2\ppder{u}{x},
         \vspace*{.4em} \\
         \text{ГУ:} & \left\{ \begin{array}{l}
             u(0, t) = f_1(t), \\
-            u(l, t) = f_2(t); 
+            u(l, t) = f_2(t),
         \end{array} \right. \\
         \text{НУ:} & u(x, 0) = \phi(x).
     \end{array} \right\}
@@ -42,36 +42,36 @@
 \]
 и их решения:
 \[
-    X = A\sin\lambda x + B\cos\lambda x, \quad T = \e^{-\lambda^2\alpha^2 t}.
+    X = a\cos\lambda x + b\sin\lambda x, \quad T = \e^{-\lambda^2\alpha^2 t}.
 \]
 
 Получаем, что
 \[
-    u = (A\sin\lambda x + B\cos\lambda x)\e^{-\lambda^2\alpha^2 t}.
+    u = (a\cos\lambda x + b\sin\lambda x)\e^{-\lambda^2\alpha^2 t}.
 \]
 
 Найденное решение должно удовлетворять граничным условиям:
 \begin{align*}
-    & u(0, t) = 0 \Rightarrow A\sin0 + B\cos0 = 0 \Rightarrow B = 0; \\
-    & u(l, t) = 0 \Rightarrow A\sin\lambda l = 0 \Rightarrow \lambda l = \pi n
+    & u(0, t) = 0 \Rightarrow a\cos0 + b\sin0 = 0 \Rightarrow a = 0; \\
+    & u(l, t) = 0 \Rightarrow b\sin\lambda l = 0 \Rightarrow \lambda l = \pi n
     \Rightarrow \lambda_n = \frac{\pi n}{l}.
 \end{align*}
 
 Получаем семейство функций:
 \[
-    u_n = A_n\sin\frac{\pi n}{l}x \cdot \e^{-\left(\frac{\alpha\pi n}
+    u_n = b_n\sin\frac{\pi n}{l}x \cdot \e^{-\left(\frac{\alpha\pi n}
     {l}\right)^2t},
 \]
 а общее решение краевой задачи получаем в виде:
 \[
-    u = \sum\limits_{n = 1}^\infty A_n\sin\frac{\pi n}{l}x \cdot
+    u = \sum\limits_{n = 1}^\infty b_n\sin\frac{\pi n}{l}x \cdot
     \e^{-\left(\frac{\alpha\pi n}{l}\right)^2t}.
 \]
 
 Это решение должно удовлетворять начальному условию:
 \[
-    \phi(x) = \sum\limits_{n = 1}^\infty A_n\sin\frac{\pi n}{l}x \Rightarrow
-    A_n = \frac{2}{l}\int\limits_0^l \phi(x)\sin\frac{\pi n}{l}x.
+    \phi(x) = \sum\limits_{n = 1}^\infty b_n\sin\frac{\pi n}{l}x \Rightarrow
+    b_n = \frac{2}{l}\int\limits_0^l \phi(x)\sin\frac{\pi n}{l}x.
 \]
 
 \newpage % ---------------------------------------------------------------------

@@ -21,72 +21,74 @@
         Синус-преобразование Фурье &
         % используется \( \ds x \) для уменьшения занимаемого места
         \( \ds
-            F_s[f] = F(\omega) = \frac{2}{\pi}\int\lni f(t)\sin(\omega t)\d t
+            \mathcal{F}_s[f] = F(\omega) =
+            \frac{2}{\pi}\int\lni f(t)\sin(\omega t)\d t
         \)
         &
         \( \ds
-            F_s^{-1}[F] = f(t) = \int\lni F(\omega)\sin(\omega t)\d\omega
+            \mathcal{F}_s^{-1}[F] = f(t) =
+            \int\lni F(\omega)\sin(\omega t)\d\omega
         \) \\ \hline
         % --------------------
         Косинус-преобразование Фурье &
         \( \ds
-            F_c[f] = \frac{2}{\pi}\int\lni f(t)\cos(\omega t)\d t
+            \mathcal{F}_c[f] = \frac{2}{\pi}\int\lni f(t)\cos(\omega t)\d t
         \)
         &
         \( \ds
-            F_c^{-1}[F] = \int\lni F(\omega)\cos(\omega t)\d\omega
+            \mathcal{F}_c^{-1}[F] = \int\lni F(\omega)\cos(\omega t)\d\omega
         \) \\ \hline
         % --------------------
         Преобразование Фурье &
         \( \ds
-            F[f] = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(t)
-            \e^{-\i\omega t}\d t
+            \mathcal{F}[f] = \frac{1}{\sqrt{2\pi}}
+            \int\limits_{-\infty}^{+\infty} f(t)\e^{-\i\omega t}\d t
         \)
         &
         \( \ds
-            F^{-1}[F] = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}
-            F(\omega)\e^{\i\omega t}\d\omega
+            \mathcal{F}^{-1}[F] = \frac{1}{\sqrt{2\pi}}
+            \int\limits_{-\infty}^{+\infty}F(\omega)\e^{\i\omega t}\d\omega
         \) \\ \hline
         % --------------------
         Конечное синус-преобразование &
         \( \ds
-            F_s[f] = S_n = \frac{2}{L}\int\limits_0^L f(t)\sin\left(
+            \mathcal{F}_s[f] = S_n = \frac{2}{L}\int\limits_0^L f(t)\sin\left(
             \frac{\pi nt}{L}\right)\d t
         \)
         &
         \( \ds
-            F_s^{-1}[S_n] = \sum\limits_{n=1}^\infty S_n\sin\left(
+            \mathcal{F}_s^{-1}[S_n] = \sum\limits_{n=1}^\infty S_n\sin\left(
             \frac{\pi nt}{L}\right)
         \) \\ \hline
         % --------------------
         Конечное косинус-преобразование &
         \( \ds
-            F_c[f] = C_n = \frac{2}{L}\int\limits_0^L f(t)\cos\left(
+            \mathcal{F}_c[f] = C_n = \frac{2}{L}\int\limits_0^L f(t)\cos\left(
             \frac{\pi nt}{L}\right)\d t
         \)
         &
         \( \ds
-            F_c^{-1}[C_n] = \frac{C_0}{2} + \sum\limits_{n=1}^\infty
+            \mathcal{F}_c^{-1}[C_n] = \frac{C_0}{2} + \sum\limits_{n=1}^\infty
             C_n\cos\left(\frac{\pi nt}{L}\right)
         \) \\ \hline
         % --------------------
         Преобразование Лапласа &
         \( \ds
-            L[f] = \int\lni f(t)\e^{-st}\d t
+            \mathcal{L}[f] = \int\lni f(t)\e^{-st}\d t
         \)
         &
         \( \ds
-            L^{-1}[F] = \frac{1}{2\pi\i}\int\limits_{c-\i\infty}^{c+\i\infty}
-            F(s)\e^{st}\d s
+            \mathcal{L}^{-1}[F] = \frac{1}{2\pi\i}
+            \int\limits_{c-\i\infty}^{c+\i\infty}F(s)\e^{st}\d s
         \) \\ \hline
         % --------------------
         Преобразование Ханкеля &
         \( \ds
-            H[f] = F_n(\xi) = \int\lni tJ_n(t\xi)f(t)\d t
+            \mathcal{H}[f] = F_n(\xi) = \int\lni tJ_n(t\xi)f(t)\d t
         \)
         &
         \( \ds
-            H^{-1}[F_n] = f(t) = \int\lni \xi J_n(t\xi)F_n(\xi)\d\xi
+            \mathcal{H}^{-1}[F_n] = f(t) = \int\lni \xi J_n(t\xi)F_n(\xi)\d\xi
         \) \\ \hline
     \end{tabular}
 \end{table}
