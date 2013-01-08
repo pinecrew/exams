@@ -48,7 +48,7 @@
 \end{minipage}
 \hfill
 \begin{minipage}{.65\textwidth}
-    Воспользуемся \( \sin \)-преобразованием по переменной \( x \), получим:
+    Воспользуемся синус-преобразованием по переменной \( x \) и получим:
     \[
         \dder{S_n}{t} = -(\pi n)^2 S_n + (2\pi n)(0 + (-1)^{n+1}\cdot 0) + \delta_{1n},
     \]
@@ -76,9 +76,9 @@
 
 В итоге:
 \[
-    u(x, t) = \left[\left(\frac{4}{\pi} - \frac{1}{\pi^2}\right)\cos(\pi t)
-    + \frac{1}{\pi^2}\right]\sin(\pi x) + \frac{4}{\pi}\sum_{n=1}^\infty
-    \frac{1}{2n+1}\cos[(2n + 1)\pi t]\sin[(2n + 1)\pi x].
+    u(x, t) = \left(\left(\frac{4}{\pi} - \frac{1}{\pi^2}\right)\cos\pi t
+    + \frac{1}{\pi^2}\right)\sin\pi x + \frac{4}{\pi}\sum_{n=1}^\infty
+    \frac{1}{2n+1}\cos(2n + 1)\pi t\cdot\sin(2n + 1)\pi x.
 \]
 
 \newpage

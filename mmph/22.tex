@@ -47,16 +47,15 @@
     \text{ где } \omega_n = \alpha\left(\frac{\pi n}{l}\right)^2.
 \]
 
-Таким образом, \( \ds u(x, t) = \sum_{n=0}^\infty \left[a_n\cos\ 
-\alpha\left(\frac{\pi n}{l}\right)^2t + b_n\sin\ 
-\alpha\left(\frac{\pi n}{l}\right)^2t\right]\cdot
-\sin\left(\frac{\pi nx}{l}\right) \).
+Таким образом, \( \ds u(x, t) = \sum_{n=0}^\infty \left(a_n\cos
+\left(\frac{\pi n}{l}\right)^2\alpha t + b_n\sin
+\left(\frac{\pi n}{l}\right)^2\alpha t\right)\cdot
+\sin\frac{\pi nx}{l} \).
 
 Коэффициенты \( a_n \) и \( b_n \) определяются с помощью начальных условий:
 \[
-    a_n = \frac{2}{l} \int\limits_0^l \phi(x)\sin
-    \left(\frac{\pi nx}{l}\right)\d x, \quad
+    a_n = \frac{2}{l} \int\limits_0^l \phi(x)\sin\frac{\pi nx}{l}\d x, \quad
     b_n = \frac{2l}{\alpha\pi^2 n^2} \int\limits_0^l \psi(x)\sin
-    \left(\frac{\pi nx}{l}\right)\d x.
+    \frac{\pi nx}{l}\d x.
 \]
 \newpage

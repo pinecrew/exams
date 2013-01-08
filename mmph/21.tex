@@ -7,14 +7,14 @@
 \[
     \left. \begin{array}{rl}
         \text{ДУЧП:} & \ds \ppder{u}{t} = c^2\ppder{u}{x},
-        \quad x\in(0, l); \\[.4em]
+        \quad x\in(0, l), \\[.4em]
         \text{ГУ:} & \left\{ \begin{array}{l}
             u(0, t) = 0, \\
-            u(l, t) = 0; 
+            u(l, t) = 0, 
         \end{array} \right. \\
         \text{НУ:} & \left\{ \begin{array}{l}
             u(x, 0) = \phi(x), \\
-            \ds \pder{u}{t}(x, 0) = \psi(x); 
+            \ds \pder{u}{t}(x, 0) = \psi(x).
         \end{array} \right.
     \end{array} \right\}
 \]
@@ -22,7 +22,7 @@
 \hfill
 \begin{minipage}{.5\textwidth}
     Воспользуемся методом разделения переменных. Будем искать 
-    решение вида:
+    решение вида
     
     \( u(x,t) = X(x)\cdot T(t) \), называемые стоячими волнами.
 
@@ -36,7 +36,7 @@
 Получаем ОДУ для \( T \): \( T'' + \lambda^2 c^2 T = 0 \) и задачу
 Штурма-Лиувилля для \( X \):
 \[
-    \left. \begin{array}{rl}
+    \left. \begin{array}{l}
     	X'' + k^2 X = 0,\quad x\in[0, l] \\
     	\left\{ \begin{array}{l}
     		X(0) = 0, \\
