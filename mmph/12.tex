@@ -7,7 +7,7 @@
     \frac{a_0}{2} + \sum\limits_{n=1}^\infty \Bigl(a_n\cos nx + b_n\sin nx\Bigr)
 \]
 называется тригонометрическим рядом, а постоянные числа \( a_0 \), \( a_n \) и
-\( b_n \) \( (n \in \mathcal{N}) \) -- коэффициентами тригонометрического ряда.
+\( b_n \) \( (n \in \mathbb{N}) \) -- коэффициентами тригонометрического ряда.
 Если такой ряд сходится, то его сумма -- периодическая функция с периодом
 \( 2\pi \).
 
@@ -67,16 +67,16 @@ f(x)\cos(\xi x)\d x \), \( \ds b(\xi) = \frac{1}{\pi}
 \( \ds \cos x = \frac{\e^{\i x} + \e^{-\i x}}{2} \), то можно записать
 комплексный вид интеграла Фурье:
 \[
-    f(x) = \frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} \left[
-    \int\limits_{-\infty}^{+\infty} f(x)\cdot\e^{-\i\xi x}\d x\right]
+    f(x) = \frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} \left(
+    \int\limits_{-\infty}^{+\infty} f(x)\cdot\e^{-\i\xi x}\d x\right)
     \e^{\i\xi x}\d\xi.
 \]
 
 Отсюда получаем пару интегральных преобразований:
 \[
-    F[f] = F(\xi) = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(x)
-    \e^{-\i\xi x}\d x, \quad
-    F^{-1}[F] = f(x) = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f(x)
-    \e^{\i\xi x}\d\xi.
+    \mathcal{F}[f] = F(\xi) = \frac{1}{\sqrt{2\pi}}
+    \int\limits_{-\infty}^{+\infty} f(x)\e^{-\i\xi x}\d x, \quad
+    \mathcal{F}^{-1}[F] = f(x) = \frac{1}{\sqrt{2\pi}}
+    \int\limits_{-\infty}^{+\infty} f(x)\e^{\i\xi x}\d\xi.
 \]
 \newpage

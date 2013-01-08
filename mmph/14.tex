@@ -2,33 +2,35 @@
 теплопроводности в полубесконечной среде.}
 
 \section{Преобразование Лапласа}
-Интегральное преобразование \( \ds L[f] = \int\lni f(t)\e^{-st}\d t \)
+Интегральное преобразование \( \ds \mathcal{L}[f] = \int\lni f(t)\e^{-st}\d t \)
 называется преобразованием Лапласа.
 
-Достаточное условие существования преобразования Лапласа: при любом \( A > 0 \)
-функция \( f(t) \) кусочно-непрерывна на \( [0, A] \); существуют постоянные
-\( M \), \( a \), \( T \) такие, что \( \ds |f(t)| \le M\e^{at} \) для всех
-\( t > T \). В этом случае преобразование Лапласа существует при всех
-\( s > a \).
+Достаточное условие существования преобразования Лапласа: если при любом
+\( A > 0 \) функция \( f(t) \) кусочно-непрерывна на \( [0, A] \) и существуют
+постоянные \( M \), \( a \), \( T \) такие, что \( \ds |f(t)| \le M\e^{at} \)
+при всех \( t > T \), то в этом случае преобразование Лапласа существует при
+всех \( s > a \).
 
 Свойства преобразования Лапласа:
 \begin{enumerate}
-    \item Обратимость: \( \ds L^{-1}\bigl[L[f]\bigr] = f \),
+    \item Обратимость: \( \ds \mathcal{L}^{-1}\bigl[\mathcal{L}[f]\bigr] = f \),
     
-    где обратное преобразование: \( \ds L^{-1}[F] = \frac{1}{2\pi\i}
+    где обратное преобразование: \( \ds \mathcal{L}^{-1}[F] = \frac{1}{2\pi\i}
     \int\limits_{c-\i\infty}^{c+\i\infty} F(s)\e^{st}\d s \);
     
     \item преобразование частных производных:\\
     \(
-        \ds L_t\left[\pnder{n}{u}{t}\right] = s^nL_t[u] - 
-        \sum\limits_{k=0}^{n-1} s^k u^{(n - 1 - k)},\quad 
-        \ds L_t\left[\pnder{n}{u}{x}\right] = \pnder{n}{}{x}L_t[u];
+        \ds \mathcal{L}_t\left[\pnder{n}{u}{t}\right] = s^n\mathcal{L}_t[u] - 
+            \sum\limits_{k=0}^{n-1} s^k u^{(n - 1 - k)},\quad 
+        \ds \mathcal{L}_t\left[\pnder{n}{u}{x}\right] =
+            \pnder{n}{}{x}\mathcal{L}_t[u];
     \)
     
-    \item свёртка: \( L[f*g] = L[f]\cdot L[g] \),
+    \item свёртка: \( \mathcal{L}[f*g] = \mathcal{L}[f]\cdot \mathcal{L}[g] \),
     \( \ds f*g = \int\limits_0^t f(t-\tau)g(\tau)\d\tau \);
     
-    \item линейность: \( L[af + bg] = aL[f] + bL[g] \).
+    \item линейность:
+        \( \mathcal{L}[af + bg] = a\mathcal{L}[f] + b\mathcal{L}[g] \).
 \end{enumerate}
 
 \section{Задача о теплопроводности в полубесконечной среде}
@@ -52,15 +54,15 @@
     \flushright
     \[
         \left\{ \begin{array}{l}
-            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\[.5em]
-            \ds \pder{u}{x}(0,t) 0 - hu(0, t) = 0; \\
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}, \\[.5em]
+            \ds \pder{u}{x}(0,t) - hu(0, t) = 0, \\
             u(x, 0) = u_0.
         \end{array} \right.
     \]
     Преобразованная задача:
     \[
         \left\{ \begin{array}{l}
-            \ds s\bar{u}(x) - u_0 = \alpha^2\dder{\bar{u}}{x}; \\
+            \ds s\bar{u}(x) - u_0 = \alpha^2\dder{\bar{u}}{x}, \\
             \ds \der{\bar{u}}{x}(0) = h\bar{u}(0).
         \end{array} \right.
     \]
@@ -68,9 +70,9 @@
 
 Сделав обратное преобразование, получим:
 \[
-    u(x, t) = u_0 - u_0\left[\erfc\left(\frac{x}{2\alpha\sqrt{t}}\right) + 
+    u(x, t) = u_0 - u_0\left(\erfc\left(\frac{x}{2\alpha\sqrt{t}}\right) + 
     \erfc\left(\frac{x}{2\alpha\sqrt{t}} + \alpha h\sqrt{t}\right)\cdot
-    \e^{xh + \alpha^2h^2 t}\right].
+    \e^{xh + \alpha^2h^2 t}\right).
 \]
 
 \newpage

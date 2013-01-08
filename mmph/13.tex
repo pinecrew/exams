@@ -1,27 +1,30 @@
 \chapter{Свойства преобразования Фурье. Решение задачи о распространении тепла
 в бесконечном стержне с заданной начальной температурой.}
 
-Свойства преобразования Фурье:
+\section{Свойства преобразования Фурье}
 \begin{enumerate}
-    \item обратимость: \( F^{-1}\bigl[F[f]\bigr] = f \);
-    \item линейность: \( F[af + bg] = aF[f] + bF[g] \);
+    \item обратимость: \( \mathcal{F}^{-1}\bigl[\mathcal{F}[f]\bigr] = f \);
+    \item линейность:
+        \( \mathcal{F}[af + bg] = a\mathcal{F}[f] + b\mathcal{F}[g] \);
     \item преобразование производных:
     \( \ds
-        \pnder{n}{u}{x} \to (\i\xi)^n\cdot F_x[u],\ 
-        \pnder{n}{u}{t} \to \pnder{n}{}{t} F_x[u];
+        \mathcal{F}_x\left[\pnder{n}{u}{x}\right] =
+            (\i\xi)^n\mathcal{F}_x[u],\ 
+        \mathcal{F}_x\left[\pnder{n}{u}{t}\right]=
+            \pnder{n}{}{t}\mathcal{F}_x[u];
     \)
     \item свёртка:    
-    \( F[f * g] = F[f]\cdot F[g] \), где
+    \( \mathcal{F}[f * g] = \mathcal{F}[f]\cdot \mathcal{F}[g] \), где
     \[ 
         (f * g)(x) = \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}
-        f(x-\xi)g(\xi)\d\xi = F^{-1}\bigr[F[f]\cdot F[g]\bigl]
-        \text{ -- свёртка}.
+        f(x-\xi)g(\xi)\d\xi \text{ -- свёртка}.
     \]
 \end{enumerate}
 
+\section{Задача о распространении тепла в бесконечном стержне}
 \begin{minipage}{.67\textwidth}
-    Рассмотрим теперь \emph{задачу о распространении тепла в бесконечном стержне},
-    если задана начальная температура \( u(x, 0) = \phi(x) \).
+    Рассмотрим теперь \emph{задачу о распространении тепла в бесконечном
+    стержне}, если задана начальная температура \( u(x, 0) = \phi(x) \).
 
     Сделаем преобразование Фурье по переменной \( x \): \( u \to \bar{u} \).
 \end{minipage}
@@ -29,7 +32,7 @@
 \begin{minipage}{.3\textwidth}
     \[
         \left\{ \begin{array}{l}
-            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}, \\
             u(x, 0) = \phi(x).
         \end{array} \right.
     \]
@@ -44,7 +47,7 @@
 \begin{minipage}{.3\textwidth}
     \[
         \left\{ \begin{array}{l}
-            \ds \der{u}{t} = -\alpha^2\xi^2\bar{u}; \\
+            \ds \der{u}{t} = -\alpha^2\xi^2\bar{u}, \\
             \bar{u}(0) = \bar{\phi}(\xi).
         \end{array} \right.
     \]
@@ -52,15 +55,15 @@
 
 Обратным преобразованием Фурье получаем ответ:
 \[
-    u(x, t) = F^{-1}[\bar{\phi}(\xi)\cdot\e^{-\alpha^2\xi^2 t}] =
-    F^{-1}[\bar{\phi}(\xi)] * F^{-1}[\e^{-\alpha^2\xi^2 t}] =
+    u(x, t) = \mathcal{F}^{-1}[\bar{\phi}(\xi)\cdot\e^{-\alpha^2\xi^2 t}] =
+    \mathcal{F}^{-1}[\bar{\phi}(\xi)]*\mathcal{F}^{-1}[\e^{-\alpha^2\xi^2 t}]=
     \frac{1}{2\alpha\sqrt{\pi t}} \int\limits_{-\infty}^{+\infty} \phi(s)
     \e^{\frac{-(x-s)^2}{4\alpha^2 t}}\d s.
 \]
 
 Функция \( \ds G(x, t) = \frac{1}{2\alpha\sqrt{\pi t}}
-\e^{\frac{-x^2}{4\alpha^2 t}} \) называется функцией Грина. Тогда ответ
-может быть представлен в виде:
+\e^{\frac{-x^2}{4\alpha^2 t}} \) называется функцией Грина данной задачи. Тогда
+ответ может быть представлен в виде:
 \[
     u(x, t) = \int\limits_{-\infty}^{+\infty} \phi(s)\cdot G(x-s, t)\d s.
 \]

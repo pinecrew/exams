@@ -1,9 +1,9 @@
-\chapter{Решение одномерного волнового уравнения с помощью формулы Даламбера.
-Примеры применения формулы Даламбера в некоторых конкретных задачах.}
+\chapter{Решение одномерного волнового уравнения с помощью формулы д'Аламбера.
+Примеры применения формулы д'Аламбера в некоторых конкретных задачах.}
 
 Начнём с решения задачи Коши:
 \begin{align*}
-    \ppder{u}{t} = c^2\ppder{u}{x}, \quad x\in\Re, t > 0, \\
+    \ppder{u}{t} = c^2\ppder{u}{x}, \quad x\in\mathbb{R},\ t > 0, \\
     \left\{ \begin{array}{l}
         u(x, 0) = \phi(x), \\
         \ds \pder{u}{t}(x, 0) = \psi(x).
@@ -34,7 +34,7 @@ f(x - ct) + g(x + ct) \).
 \[
     \left\{ \begin{array}{l}
         f(x) + g(x) = \phi(x), \\
-        -cf'(x) + cg'(x) = \psi,
+        -cf'(x) + cg'(x) = \psi(x),
     \end{array} \right.
     \quad\Leftrightarrow\quad
     \left\{ \begin{array}{l}
@@ -47,7 +47,7 @@ f(x - ct) + g(x + ct) \).
     \text{Отсюда, }\quad & f(x) = \frac{1}{2}\phi(x) -
     \frac{1}{2c}\int\limits_{x_0}^x \psi(\zeta)\d\zeta - \frac{K}{2}, \\
     & g(x) = \frac{1}{2}\phi(x) + \frac{1}{2c}\int\limits_{x_0}^x
-    \psi(\zeta)\d\zeta - \frac{K}{2}.
+    \psi(\zeta)\d\zeta + \frac{K}{2}.
 \end{align*}
 
 Тогда решение имеет вид
@@ -70,7 +70,7 @@ f(x - ct) + g(x + ct) \).
     
     По формуле д'Аламбера получаем решение:
     \[
-        u(x, t) = \frac{1}{2}\bigl[\sin(x - ct) + \sin(x + ct)\bigr],
+        u(x, t) = \frac{1}{2}\bigl(\sin(x - ct) + \sin(x + ct)\bigr),
     \]
     которое можно интерпретировать так: начальное смещение струны
     \( u(x, 0) = \sin x \) делится на две одинаковые части, и каждая из частей
@@ -89,7 +89,7 @@ f(x - ct) + g(x + ct) \).
     По формуле д'Аламбера получаем решение:
     \[
         u(x, t) = \frac{1}{2c}\int\limits_{x - ct}^{x + ct} \sin\zeta\d\zeta =
-        \frac{1}{2}\bigl[\cos(x - ct) - \cos(x + ct)\bigr],
+        \frac{1}{2}\bigl(\cos(x - ct) - \cos(x + ct)\bigr),
     \]
     представляющее собой сумму двух бегущих косинусоидальных волн.
 \end{enumerate}

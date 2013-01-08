@@ -9,10 +9,10 @@
 \begin{minipage}{.4\textwidth}
     \[
         \left\{ \begin{array}{l}
-            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}; \\
+            \ds \pder{u}{t} = \alpha^2 \ppder{u}{x}, \\
                 \left\{ \begin{array}{l}
                     u(0, t) = 0, \\
-                    u(l, t) = f(t); 
+                    u(l, t) = f(t),
                 \end{array} \right. \\
             u(x, 0) = 0.
         \end{array} \right.
@@ -26,8 +26,8 @@
         \bar{u}(l) = F(s);
     \end{array} \right.
     \Rightarrow
-    \bar{u}(x, s) = F(s)\left[\frac{\sh\left(\frac{x}{\alpha}\sqrt{s}\right)}
-    {\sh\left(\frac{l}{\alpha}\sqrt{s}\right)}\right].
+    \bar{u}(x, s) = F(s)\frac{\sh\left(\frac{x}{\alpha}\sqrt{s}\right)}
+    {\sh\left(\frac{l}{\alpha}\sqrt{s}\right)}.
 \]
 
 Заметим, что если \( f(t) = A = \const \), то соответствующее ему решение имеет
@@ -37,24 +37,22 @@
     \frac{(-1)^n}{n}\e^{-\left(\alpha\frac{\pi n}{l}\right)^2t}\cdot
     \sin\frac{\pi n}{l}x,
 \]
-а Лаплас-образ: \( \ds \bar{w} = \frac{1}{s}\left[\frac{\sh\left(
-\frac{x}{\alpha}\sqrt{s}\right)}{\sh\left(\frac{l}{\alpha}\sqrt{s}\right)}
-\right] \).
+а Лаплас-образ: \( \ds \bar{w} = \frac{1}{s}\frac{\sh\left(
+\frac{x}{\alpha}\sqrt{s}\right)}{\sh\left(\frac{l}{\alpha}\sqrt{s}\right)} \).
 Тогда, представляя \( \bar{u}(x, s) \) в виде \( sF(s)\cdot\bar{w}(s) \) и
-учитывая соотношение \( \ds L\left[\pder{w}{t}\right] = s\bar{w} - w(x, 0) \),
-имеем:
+учитывая соотношение
+\( \ds \mathcal{L}\left[\pder{w}{t}\right] = s\bar{w} - w(x, 0) \), имеем:
 \begin{align*}
-    \bar{u}(x, s) = L[f]\cdot L\left[\pder{w}{t}\right] \Rightarrow
-    u(x, t) = f(t)*\pder{w}{t} = \int\limits_0^t \pder{w}{t}(x, t-\tau)\cdot
-    f(\tau)\d\tau = \\
+    \bar{u}(x, s) = \mathcal{L}[f]\cdot \mathcal{L}\left[\pder{w}{t}\right]
+    \Rightarrow u(x, t) = f(t)*\pder{w}{t} =
+    \int\limits_0^t \pder{w}{t}(x, t-\tau)\cdot f(\tau)\d\tau = \\
     = \int\limits_0^t w(x, t - \tau)f'(\tau)\d\tau + f(0)w(x, t).
 \end{align*}
 
-Также, если известен отклик на температурный импульс \( \delta(t) \), то
-соответствующая формула имеет вид:
+Также, если известен отклик \( v(x, t) \) на температурный импульс
+\( \delta(t) \), то соответствующая формула имеет вид:
 \[
-    u(x, t) = \int\limits_0^t v(x, t - \tau)f(\tau)\d\tau,
+    u(x, t) = \int\limits_0^t v(x, t - \tau)f(\tau)\d\tau.
 \]
-где \( v(x, t) \) -- отклик системы на температурный импульс.
 
 \newpage

@@ -1,4 +1,4 @@
-\chapter{Пространственно-временная интерпретация формулы Даламбера. Решение
+\chapter{Пространственно-временная интерпретация формулы д'Аламбера. Решение
 задачи для полубесконечной струны.}
 
 Дадим интерпретацию формулы д'Аламбера для двух частных случаев.
@@ -13,7 +13,7 @@
     
     Тогда по формуле д'Аламбера получаем:
     \[
-        u(x, t) = \frac{1}{2}\bigl[f(x - ct) + f(x + ct)\bigr].
+        u(x, t) = \frac{1}{2}\bigl(f(x - ct) + f(x + ct)\bigr).
     \]
     
     Решение \( u \) в точке \( (x_0, t_0) \) можно интерпретировать как среднее
@@ -65,7 +65,7 @@
 
 Применяя формулу д'Аламбера, получаем:
 \[
-    u(x, t) = \frac{1}{2}\bigl[\phi(x - ct) + \phi(x + ct)\bigr] +
+    u(x, t) = \frac{1}{2}\bigl(\phi(x - ct) + \phi(x + ct)\bigr) +
     \frac{1}{2c}\int\limits_{x - ct}^{x + ct} \psi(\xi)\d\xi.
 \]
 
@@ -74,7 +74,7 @@
 требуется доопределить \( \phi \) и \( \psi \) на отрицательной полуоси.
 Воспользуемся граничным условием:
 \[
-    u(0, t) = 0 \Rightarrow \frac{1}{2}\bigl[\phi(-ct) + \phi(ct)\bigr] +
+    u(0, t) = 0 \Rightarrow \frac{1}{2}\bigl(\phi(-ct) + \phi(ct)\bigr) +
     \frac{1}{2c}\int\limits_{-ct}^{ct} \psi(\xi)\d\xi = 0.
 \]
 
@@ -82,19 +82,13 @@
 \( \phi(-ct) = \phi(ct) \) и \( \psi(-ct) = -\psi(ct) \). Таким образом, в
 случае \( x - ct < 0 \) имеет место решение:
 \[
-    u(x, t) = \frac{1}{2}\bigl[\phi(x + ct) - \phi(ct - x)\bigr] +
+    u(x, t) = \frac{1}{2}\bigl(\phi(x + ct) - \phi(ct - x)\bigr) +
     \frac{1}{2c}\int\limits_{ct - x}^{x + ct} \psi(\xi)\d\xi.
 \]
 
 Комбинируя решения, окончательно получим:
 \[
-    u(x, t) = \left\{ \begin{array}{l}
-        \ds \frac{1}{2}\bigl[\phi(x + ct) + \phi(x - ct)\bigr] +
-        \frac{1}{2c}\int\limits_{x - ct}^{x + ct} \psi(\xi)\d\xi,
-        \text{ при } x \ge ct, \\
-        \ds \frac{1}{2}\bigl[\phi(x + ct) - \phi(ct - x)\bigr] +
-        \frac{1}{2c}\int\limits_{ct - x}^{x + ct} \psi(\xi)\d\xi,
-        \text{ при } x < ct.
-    \end{array} \right.
+    u(x, t) = \frac{1}{2}\bigl(\phi(x + ct) - \phi(|x - ct|)\bigr) +
+    \frac{1}{2c}\int\limits_{|x - ct|}^{x + ct} \psi(\xi)\d\xi.
 \]
 \newpage
