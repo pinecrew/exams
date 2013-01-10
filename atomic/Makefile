@@ -1,6 +1,6 @@
 COMPILER=pdflatex
 SOURCE=00.tex
-NAME=atomic-exam
+NAME=05_atomic
 FLAGS=-jobname=output
 
 default: *.tex

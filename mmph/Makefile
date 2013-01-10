@@ -1,6 +1,6 @@
 COMPILER=pdflatex
 SOURCE=00.tex
-NAME=mmph-exam
+NAME=05_mmph
 FLAGS=-jobname=output
 
 default: *.tex

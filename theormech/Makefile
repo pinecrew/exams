@@ -1,6 +1,6 @@
 COMPILER=pdflatex
 SOURCE=00.tex
-NAME=theormech-exam
+NAME=05_theormech
 FLAGS=-jobname=output
 
 default: *.tex
