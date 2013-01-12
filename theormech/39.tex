@@ -9,39 +9,39 @@
 \]
 где \( \rho \) -- плотность.
 \begin{gather*}
-    \der{m}{t} =V \der{\rho }{t}+ \rho \der{V}{t} = 0,\\
-    \der{\rho }{t}+ \frac{1}{V} \rho \der{V}{t} = 0,
+    \der{m}{t} =V \der{\rho}{t}+ \rho \der{V}{t} = 0,\\
+    \der{\rho}{t}+ \frac{1}{V} \rho \der{V}{t} = 0,
 \end{gather*}
 но \( dV \) есть изменение объёма частицы, а так как
 \( \nabla_is^i = \frac{\delta V}{V} \), где \( \delta V \) есть изменение
-объёма частицы, то:
+объёма частицы, то
 \begin{gather*}
-    \der{\rho }{t}+ \rho \frac{\nabla_is^i}{dt} = 0, \\ 
-    \der{\rho }{t}+ \rho {\nabla_iv^i } = 0.
+    \der{\rho}{t}+ \rho \frac{\nabla_is^i}{dt} = 0, \\ 
+    \der{\rho}{t}+ \rho {\nabla_iv^i} = 0.
 \end{gather*}
 
 Последнее уравнение и есть уравнение неразрывности в криволинейных координатах.
 Учитывая определение ковариантной производной и полной производной получим
 другие формы уравнения неразрывности:
 \begin{gather*}
-    \pder{\rho }{t} + 
-    \pder{\rho }{q^i} v^i + 
-    \rho \pder{v^i }{q^i} \rho  + 
-    \rho v^k \Gamma^i_{ik} = 0 \\
-    \pder{\rho }{t} + 
-    \pder{(\rho v^i) }{q^i}   + 
-    \rho v^i \Gamma^k_{ki} = 0 \\
-    \pder{\rho }{t} + 
-    \nabla_i(\rho v^i) = 0
+    \pder{\rho}{t} + 
+    \pder{\rho}{q^i} v^i + 
+    \rho \pder{v^i}{q^i} \rho  + 
+    \rho v^k \Gamma^i_{ik} = 0, \\
+    \pder{\rho}{t} + 
+    \pder{(\rho v^i)}{q^i}   + 
+    \rho v^i \Gamma^k_{ki} = 0, \\
+    \pder{\rho}{t} + 
+    \nabla_i(\rho v^i) = 0.
 \end{gather*}
 
-В декартовых координатах \( x^i \) ковариантную производную нужно заменить
+В декартовых координатах \( x^i \) ковариантную производную заменим
 частной производной:
 \begin{gather*}
-    \pder{\rho }{t} + 
-    \pder{(\rho v^i)}{x^i} = 0 \\
-    \der{\rho }{t} + 
-    \rho\pder{ v^i}{x^i} = 0    
+    \pder{\rho}{t} + 
+    \pder{(\rho v^i)}{x^i} = 0, \\
+    \der{\rho}{t} + 
+    \rho\pder{v^i}{x^i} = 0.
 \end{gather*}       
 
 
