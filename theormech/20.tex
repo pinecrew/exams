@@ -1,4 +1,43 @@
 \chapter{Структура кинетической энергии в обобщенных координатах. Матрица
 инерционных коэффициентов уравнений Лагранжа в случае стационарных связей.}
 
+Запишем кинетическую энергию материальной системы:
+\( \ds T = \frac{1}{2}\sum_{k=1}^N m_k v_k^2 \). Воспользуемся тождеством:
+\( v_k^2 = \vec{v}_k\cdot\vec{v}_k \) и заменим вектор скорости точки
+\( \vec{v}_k \) по формуле:
+\[
+    \vec{v}_k =\der{\vec{r}_k}{t} = \sum_{j=1}^s \pder{\vec{r}_k}{q_j}\dot{q}_j
+    + \pder{\vec{r}_k}{t},
+\]
+тогда кинетическая энергия примет вид: \( \ds T = \frac{1}{2}\sum_{k=1}^N m_k
+\left(\sum_{j=1}^s \pder{\vec{r}_k}{q_j}\dot{q}_j +
+\pder{\vec{r}_k}{t}\right)^2 \).
+
+Возведем скобку в квадрат и сгруппируем отдельно члены второй степени
+относительно обобщенных скоростей \( \vec{q}_j \), члены первой степени
+относительно тех же величин и члены, не содержащие скорости:
+\begin{align*}
+    T & = \frac{1}{2} \sum_{k=1}^N m_k\left( \sum_{i=1}^s \pder{\vec{r}_k}{q_i}
+    \dot{q}_i + \pder{\vec{r}_k}{t} \right) \cdot \left( \sum_{j=1}^s
+    \pder{\vec{r}_k}{q_j}\dot{q}_j + \pder{\vec{r}_k}{t} \right) = \\
+    & =\frac{1}{2}\sum_{k=1}^N m_k\left( \sum_{i=1}^s\sum_{j=1}^s
+    \pder{\vec{r}_k}{q_i}\pder{\vec{r}_k}{q_j}\dot{q}_i\dot{q}_j + 2\sum_{j=1}^s
+    \pder{\vec{r}_k}{q_j}\pder{\vec{r}_k}{t}\dot{q}_j + \pder{\vec{r}_k}{t}
+    \pder{\vec{r}_k}{t}\right).
+\end{align*}
+
+Обозначим \( \ds T_0 = \frac{1}{2}\sum_{k=1}^N m_k\pder{\vec{r}_k}{t}
+\pder{\vec{r}_k}{t} \), \( \ds a_{ij} = \sum_{k=1}^N m_k \pder{\vec{r}_k}{q_i}
+\pder{\vec{r}_k}{q_j} \), \( \ds b_j = \sum_{k=1}^N m_k \pder{\vec{r}_k}{q_j}
+\pder{\vec{r}_k}{t} \), тогда кинетическую энергию можно записать в виде:
+\( \ds T = \frac{1}{2} \sum_i\sum_j a_{ij}\dot{q}_i\dot{q}_j +
+\sum_j b_j\dot{q}_j + T_0 \).
+
+Обозначая \( \ds T_1 = \sum_j b_j\dot{q}_j \),
+\( \ds T_2 = \frac{1}{2} \sum_i\sum_j a_{ij}\dot{q}_i\dot{q}_j \), получим
+\( T = T_0 + T_1 + T_2 \).
+
+Коэффициенты \( a_{ij} \) называются матрицей инерционных коэффициентов, причем
+эта матрица является симметричной: \( a_{ij} = a_{ji} \).
+
 \newpage
