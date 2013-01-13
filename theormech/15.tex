@@ -2,4 +2,84 @@
 Кинетическая энергия твердого тела, совершающего сферическое движение.
 Динамические уравнения Эйлера.}
 
+Рассмотрим выражение кинетического момента твердого тела в случае его
+сферического движения. С учетом формулы Эйлера для скорости произвольной
+точки тела имеем: \( \ds\vec{K}_O = \sum_{k=1}^N\vec{r}_k\times m_k\vec{v}_k \),
+где \( \vec{r}_k \) -- радиус-вектор точки \( M_k \) тела относительно начала
+координат. Учитывая, что скорость точки равна \( \vec{\omega}\times\vec{r}_k \),
+имеем: \( \ds \vec{K}_O = \sum_{k=1}^N\vec{r}_k\times m_k\vec{v}_k =
+\sum_{k=1}^N \vec{r}_k\times m_k(\vec{\omega}\times\vec{r}_k) \).
+
+Используя формулу для двойного векторного произведения, получим:
+\[
+    \vec{K}_O = \sum_{k=1}^N m_k r_k^2\vec{\omega} - \sum_{k=1}^N m_k
+    (\vec{\omega}\cdot\vec{r}_k)\vec{r}_k = \sum_{k=1}^N m_k(x_k^2 + y_k^2 +
+    z_k^2)\vec{\omega} - \sum_{k=1}^N m_k (\omega_k x_k + \omega_k y_k + \omega
+    z_k)\vec{r}_k,
+\]
+где \( \omega_x,\ \omega_y,\ \omega_z \) -- проекции мгновенной угловой скорости
+\( \vec{\omega} \) тела на оси \( x_k,\ y_k,\ z_k \) соответственно. Отсюда
+получаем следующее выражение для проекций вектора \( \vec{K}_O \) на оси
+\( Ox,\ Oy \) и \( Oz \):
+\[
+    \left\{ \begin{array}{l}
+        \ds K_{O_x} = \sum_{k=1}^N m_k(y_k^2 + z_k^2)\omega_x - \sum_{k=1}^N m_k
+        x_k y_k \omega_y - \sum_{k=1}^N m_k x_k z_k \omega_z, \\[.4em]
+        \ds K_{O_y} = -\sum_{k=1}^N m_k x_k y_k \omega_x + \sum_{k=1}^N m_k
+        (x_k^2 + z_k^2)\omega_y  - \sum_{k=1}^N m_k y_k z_k \omega_z, \\[.4em]
+        \ds K_{O_z} = -\sum_{k=1}^N m_k x_k z_k \omega_x - \sum_{k=1}^N m_k y_k
+        z_k \omega_y - \sum_{k=1}^N m_k (x_k^2 + z_k^2)\omega_z.
+    \end{array} \right.
+\]
+Величины
+\[
+    I_x = \sum_{k=1}^N m_k(y_k^2 + z_k^2), \quad I_y = \sum_{k=1}^N m_k(x_k^2 +
+    z_k^2), \quad I_z = \sum_{k=1}^N m_k(x_k^2 + y_k^2)
+\]
+называют осевыми моментами инерции, а величины
+\[
+    I_{xy} = \sum_{k=1}^N m_k x_k y_k, \quad I_{yz} = \sum_{k=1}^N m_k y_k z_k,
+    \quad I_{xz} = \sum_{k=1}^N m_k x_k z_k
+\]
+называют центробежными моментами инерции. Тогда:
+\[
+    \left\{ \begin{array}{l}
+        K_{O_x} = I_x\omega_x - I_{xy}\omega_y - I_{xz}\omega_z, \\
+        K_{O_y} = -I_{xy}\omega_x + I_y\omega_y  - I_{yz}\omega_z, \\
+        K_{O_z} = -I_{xz}\omega_x - I_{yz}\omega_y - I_z\omega_z.
+    \end{array} \right.
+\]
+
+Эти формулы можно записать более компактно: \( \vec{K}_O = \hat{I}\vec{\omega} \).
+
+Для подвижной системы координат имеем: \( \ds \der{\vec{K}_O}{t} + \vec{\omega}
+\times\vec{K}_O = \sum \vec{M}^e_O \).
+
+Расписав векторное произведение
+\[
+    \vec{\omega}\times\vec{K}_O = \vec{e}_x(\omega_y K_z - \omega_z K_y) +
+    \vec{e}_y(\omega_z K_x - \omega_x K_z) + \vec{e}_z(\omega_x K_y -
+    \omega_y K_x)
+\]
+и спроецировав на оси подвижной системы координат, получим:
+\[
+    \left\{ \begin{array}{l}
+        \ds \der{K_x}{t} + (\omega_y K_z - \omega_z K_y) = M^e_x, \\[.4em]
+        \ds \der{K_y}{t} + (\omega_z K_x - \omega_x K_z) = M^e_y, \\[.4em]
+        \ds \der{K_z}{t} + (\omega_x K_y - \omega_y K_x) = M^e_z.
+    \end{array} \right.
+\]
+
+Если подвижную систему координат выбрать таким образом, чтобы координатные оси
+\( x,\ y,\ \) были главными осями инерции для точки \( O \), то все центробежные
+моменты инерции будут равны нулю:
+\[
+    \left\{ \begin{array}{l}
+        \ds I_x\der{\omega_x}{t} + (I_z -  I_y)\omega_y\omega_z = M^e_x, \\[.4em]
+        \ds I_y\der{\omega_y}{t} + (I_x -  I_z)\omega_z\omega_x = M^e_y, \\[.4em]
+        \ds I_z\der{\omega_z}{t} + (I_y -  I_x)\omega_x\omega_y = M^e_z.
+    \end{array} \right.
+\] 
+Эти уравнения называются динамическими уравнениями Эйлера.
+
 \newpage
