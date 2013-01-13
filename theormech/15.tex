@@ -3,12 +3,17 @@
 Динамические уравнения Эйлера.}
 
 Рассмотрим выражение кинетического момента твердого тела в случае его
-сферического движения. С учетом формулы Эйлера для скорости произвольной
-точки тела имеем: \( \ds\vec{K}_O = \sum_{k=1}^N\vec{r}_k\times m_k\vec{v}_k \),
+сферического движения:
+\[
+`\vec{K}_O = \sum_{k=1}^N\vec{r}_k\times m_k\vec{v}_k,
+\]
 где \( \vec{r}_k \) -- радиус-вектор точки \( M_k \) тела относительно начала
 координат. Учитывая, что скорость точки равна \( \vec{\omega}\times\vec{r}_k \),
-имеем: \( \ds \vec{K}_O = \sum_{k=1}^N\vec{r}_k\times m_k\vec{v}_k =
-\sum_{k=1}^N \vec{r}_k\times m_k(\vec{\omega}\times\vec{r}_k) \).
+имеем:
+\[
+    \vec{K}_O = \sum_{k=1}^N\vec{r}_k\times m_k\vec{v}_k =
+    \sum_{k=1}^N \vec{r}_k\times m_k(\vec{\omega}\times\vec{r}_k).
+\]
 
 Используя формулу для двойного векторного произведения, получим:
 \[
@@ -28,7 +33,7 @@
         \ds K_{O_y} = -\sum_{k=1}^N m_k x_k y_k \omega_x + \sum_{k=1}^N m_k
         (x_k^2 + z_k^2)\omega_y  - \sum_{k=1}^N m_k y_k z_k \omega_z, \\[.4em]
         \ds K_{O_z} = -\sum_{k=1}^N m_k x_k z_k \omega_x - \sum_{k=1}^N m_k y_k
-        z_k \omega_y - \sum_{k=1}^N m_k (x_k^2 + z_k^2)\omega_z.
+        z_k \omega_y + \sum_{k=1}^N m_k (x_k^2 + z_k^2)\omega_z.
     \end{array} \right.
 \]
 Величины
@@ -46,14 +51,22 @@
     \left\{ \begin{array}{l}
         K_{O_x} = I_x\omega_x - I_{xy}\omega_y - I_{xz}\omega_z, \\
         K_{O_y} = -I_{xy}\omega_x + I_y\omega_y  - I_{yz}\omega_z, \\
-        K_{O_z} = -I_{xz}\omega_x - I_{yz}\omega_y - I_z\omega_z.
+        K_{O_z} = -I_{xz}\omega_x - I_{yz}\omega_y + I_z\omega_z.
     \end{array} \right.
 \]
 
-Эти формулы можно записать более компактно: \( \vec{K}_O = \hat{I}\vec{\omega} \).
+Эти формулы можно записать более компактно: \( \vec{K}_O = \hat{I}\vec{\omega}
+\). Кинетическую энергию можно представить как кинетаческую энергию тела,
+вращающегося вокруг оси, параллельной \( omega \):
+\[
+    T = \frac{1}{2}\vec{K}_O\cdot\vec{\omega}.
+\] 
 
-Для подвижной системы координат имеем: \( \ds \der{\vec{K}_O}{t} + \vec{\omega}
-\times\vec{K}_O = \sum \vec{M}^e_O \).
+Для подвижной системы координат, связанной с телом имеем следующий вид правила
+моментов:
+\[
+    \der{\vec{K}_O}{t} + \vec{\omega} \times\vec{K}_O = \vec{M}^e_O.
+\]
 
 Расписав векторное произведение
 \[
