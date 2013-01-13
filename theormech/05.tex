@@ -1,3 +1,41 @@
 \chapter{Понятие об абсолютной и ковариантной производных.}
 
+Рассмотрим произвольное векторное поле \( \vec{a} \). Как и ранее определим его
+в ковариантном базисе и попытаемся найти от него частные производные по
+координатам:
+\begin{gather*}
+    \pder{\vec{a}}{q^i} = 
+    \pder{(a^j \vec{e}_{j})}{q^i} = 
+    \pder{a^j}{q^i}\vec{e}_{j} + \pder{ \vec{e}_{j}}{q^i} a^j =
+    \pder{a^j}{q^i}\vec{e}_{j} + \Gamma^k_{ij} \vec{e}_{k} a^j =\\=
+    \pder{a^k}{q^i}\vec{e}_{k} + \Gamma^k_{ij} \vec{e}_{k} a^j =
+    \left(\pder{a^k}{q^i} + a^j \Gamma^k_{ij}\right)\vec{e}_{k}.
+\end{gather*}
+
+Выражение в скобках даёт контрвариантные компоненты частной производной от
+векторного поля по координатам, носит название \emph{ковариантной производной
+контрвариантных компонент вектора } \( \vec{a} \) и обозначается:
+\[
+    \nabla_i a^k = a^k_{,i} = \pder{a^k}{q^i} + a^j \Gamma^k_{ij}.
+\]
+    
+Дифференциал от вектора \( \vec{a} \) носит название абсолютного дифференциала
+и обозначается \( \delta  \vec{a} \) или \( D  \vec{a} \), если \( \vec{a} \)
+функция координат \( q^i \) и параметра \( t \), то с учётом, что базисные
+векторы \( \vec{e}_{k} \) явно от \( t \) не зависят:
+\begin{gather*}
+    \delta  \vec{a} \equiv \delta a^k \vec{e}_{k}= 
+    \pder{\vec{a}}{t} dt + \pder{ \vec{a}}{q^i} dq^i = 
+    \pder{a^k}{t} \vec{e}_{k} dt  + \nabla_i a^k \vec{e}_{k} dq^i =
+    \pder{a^k}{t}\vec{e}_{k} dt  + \left(\pder{a^k}{q^i}dq^i +
+    a^j \Gamma^k_{ij} dq^i\right) \vec{e}_{k} = \\ =
+    \left(\pder{a^k}{t} dt+\pder{a^k}{q^i}dq^i +
+    a^j \Gamma^k_{ij} dq^i\right) \vec{e}_{k} = 
+    \left(d{a^k} + a^j \Gamma^k_{ij} dq^i\right) \vec{e}_{k}.
+\end{gather*}
+    
+Если \( q^i \) - функции параметра \( t \), то компоненты отношения
+дифференциалов \( \delta\vec{a}/dt \) \( \delta a^k/dt \) носят название
+\emph{абсолютной производной контрвариантных компонент вектора}.
+
 \newpage

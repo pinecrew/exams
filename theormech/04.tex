@@ -1,4 +1,134 @@
 \chapter{Параллельное векторное поле. Символы Кристоффеля первого и второго
 рода. Определение символов Кристоффеля через фундаментальный метрический тензор.}
+Рассмотрим векторное поле \( \vec{a} \), постоянное в декартовых координатах.
+Линии такого поля параллельны. Для двух близко расположенных точек \( M \) и
+\( M' \):
+\[
+    d\vec{a} = \vec{a}(M') - \vec{a}(M) = 0.
+\]
+    
+Положим этот факт в основу определения \emph{параллельного векторного поля} в
+криволинейных координатах.
 
+Вблизи точки \( M \) в криволинейных координатах \( q^i \) вектор \( \vec{a} \)
+можно разложить по ковариантному базису:
+\[
+    \vec{a} = a^i \vec{e}_{i} = a^i \pder{\vec{r}}{q^i}.
+\]
+Тогда
+\[
+    d\vec{a} = a^i d\vec{e}_{i} + \vec{e}_{i} da^i  = 
+    a^i \pder{\vec{e}_{i}}{q^j} dq^j + \vec{e}_{i} da^i = 0.
+\]
+    
+\( \partial\vec{e}_{i}/{\partial q^j} \) можно представить в виде:
+\[
+    \pder{\vec{e}_{i}}{q^j} = 
+    \pcder{\vec{r}}{q^i}{q^j} =
+    \Gamma^k_{ji} \vec{e}_{k}.
+\]
+
+Величины \( \Gamma^k_{ji} \) называют \emph{символами Кристоффеля второго рода}.
+\textbf{Цитата из лекции:} В пространстве без кручения последовательность
+взятия производных \( \partial^2{\vec{r}}/{\partial q^i \partial  q^j} \) не
+имеет значения:
+\[
+    \pder{\vec{e}_{i}}{q^j} = 
+    \pder{\vec{e}_{j}}{q^i} =
+    \Gamma^k_{ij} \vec{e}_{k},
+\]
+откуда
+\[
+    \Gamma^k_{ji} = \Gamma^k_{ij}.
+\]
+
+Немые индексы можно менять, тогда для \( d\vec{a} \):
+\[
+    d\vec{a} = 
+    a^i \Gamma^k_{ji} \vec{e}_{k} dq^j + \vec{e}_{i} da^i = 
+    a^i \Gamma^k_{ji} \vec{e}_{k} dq^j + \vec{e}_{k} da^k =
+    \left(a^i \Gamma^k_{ji} dq^j + da^k\right)\vec{e}_{k}  =
+    0
+\]
+и в силу линейной независимости \( \vec{e}_{k} \) получаем \emph{условие
+параллельного переноса}:
+\[
+    da^k + a^i \Gamma^k_{ji} dq^j  = 0.
+\]
+    
+Символы Кристоффеля можно определить через метрический тензор.
+\textbf{По лекции:} В основе определения лежит гипотеза о том, что скалярное
+произведение двух векторов не меняется при параллельном переносе:
+\begin{gather*}
+    d(g_{ij}a^i b^j) = 0, \\
+    a^i b^j \ dg_{ij}   + b^j g_{ij}\ da^i + a^i g_{ij}\ db^j = 0.
+\end{gather*}
+С учётом условия параллельного переноса для векторов \( \vec{a} \) и
+\( \vec{b} \) получим:
+\begin{gather*}
+    a^i b^j \ dg_{ij}   - 
+    a^l b^j g_{ij} \Gamma^i_{kl}\ dq^k -
+    b^l a^i g_{ij} \Gamma^j_{kl} dq^k = 0.
+\end{gather*}
+Меняя местами немые индексы во втором слагаемом \( i \leftrightarrow l \),
+а в третьем \( j \leftrightarrow l \), получим
+\begin{gather*}
+    a^i b^j \ dg_{ij}   - 
+    a^i b^j g_{lj} \Gamma^l_{ki}\ dq^k -
+    b^j a^i g_{il} \Gamma^l_{kj} dq^k = 0, \\
+    dg_{ij} - 
+    g_{lj} \Gamma^l_{ki}\ dq^k -
+    g_{il} \Gamma^l_{kj} dq^k = 0.
+\end{gather*}   
+Учитывая \( g_{ij} = \vec{e}_{i} \cdot \vec{e}_{j} = g_{ji} \)
+\begin{gather*}
+    dg_{ij} - 
+    g_{lj} \Gamma^l_{ki}\ dq^k -
+    g_{li} \Gamma^l_{kj} dq^k = 0, \\
+    \pder{g_{ij}}{q^k} dq^k - 
+    g_{lj} \Gamma^l_{ki}\ dq^k -
+    g_{li} \Gamma^l_{kj} dq^k = 0, \\
+    \pder{g_{ij}}{q^k} =
+    g_{lj} \Gamma^l_{ki} +
+    g_{li} \Gamma^l_{kj}.
+\end{gather*}
+    
+Свёртка \( g_{lj} \Gamma^l_{ki}  \) носит название \emph{символов Кристоффеля
+первого рода} и обозначается \( \Gamma_{j,ki} \). В силу
+\( \Gamma^l_{ki} = \Gamma^l_{ik} \) выполняется
+\( \Gamma_{j,ki} = \Gamma_{j,ik} \). Далее запишем три выражения:
+\begin{gather*}
+    \pder{g_{ij}}{q^k} =
+    \Gamma_{j,ki} +
+    \Gamma_{i,kj}, \\
+    \pder{g_{kj}}{q^i} =
+    \Gamma_{j,ik} +
+    \Gamma_{k,ij} =
+    \Gamma_{j,ki} +
+    \Gamma_{k,ij},
+    \\
+    \pder{g_{ik}}{q^j} =
+    \Gamma_{k,ji} +
+    \Gamma_{i,jk} =
+    \Gamma_{k,ij} +
+    \Gamma_{i,kj},
+\end{gather*}   
+откуда складывая два первых равенства и вычитая третье получаем:
+\[
+    \Gamma_{j,ki} = \frac{1}{2}\left(
+    \pder{g_{ij}}{q^k}+
+    \pder{g_{kj}}{q^i}-
+    \pder{g_{ik}}{q^j}   
+    \right).
+\]
+    
+Домножая на \( g^{mj} \) и сворачивая по \( j \), записывая выражение для
+\( \Gamma_{j,ki} \) и учитывая \( g^{mj}g_{lj} = \delta^m_l \), получаем:
+\[
+    \Gamma^m_{ki} = \frac{g^{mj}}{2}\left(
+        \pder{g_{ij}}{q^k}+
+        \pder{g_{kj}}{q^i}-
+        \pder{g_{ik}}{q^j}   
+        \right).
+\] 
 \newpage
