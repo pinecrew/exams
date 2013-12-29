@@ -128,7 +128,7 @@
 \( l \):
 \[
     u(\omega, T) = \frac{dW}{l^3\d\omega} =
-    \frac{dN\midnum{W(\omega, T)}}{l^3\d\omega},
+    \frac{dN\average{W(\omega, T)}}{l^3\d\omega},
 \]
 где \( dN \) -- число волн в спектральном диапазоне
 \( [\omega, \omega+d\omega] \). Для образования стоячих волн должны выполняться
@@ -147,10 +147,10 @@
 Отсюда
 \[
     u(\omega, T) =
-    \frac{V}{\pi^2}\frac{\omega^2}{c^3}\frac{\midnum{W}}{V} =
-    \frac{\omega^2}{\pi^2c^3}\midnum{W}.
+    \frac{V}{\pi^2}\frac{\omega^2}{c^3}\frac{\average{W}}{V} =
+    \frac{\omega^2}{\pi^2c^3}\average{W}.
 \]
-Далее Релей и Джинс предположили, что \( \midnum{W} = kT \) согласно
+Далее Релей и Джинс предположили, что \( \average{W} = kT \) согласно
 теореме о равномерном распределении энергии по степеням свободы. Таким образом,
 был получен закон Релея-Джинса:
 \[
@@ -169,7 +169,7 @@
 \( N_n = A\cdot\exp(-W_n/kT) = A\cdot\exp(-n\hbar\omega/kT) \). Усредняя
 энергию, получим
 \[
-    \midnum{W} =
+    \average{W} =
     \frac{\sum\limits_{n=1}^\infty N_nW_n}{\sum\limits_{n=1}^\infty N_n} = 
     \frac{\sum\limits_{n=1}^\infty A\cdot\exp(-\frac{n\hbar\omega}{kT})\cdot
     n\hbar\omega}{\sum\limits_{n=1}^\infty A\cdot\exp(-\frac{n\hbar\omega}{kT})} =

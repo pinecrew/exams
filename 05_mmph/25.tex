@@ -19,13 +19,13 @@
     
     Оказывается, что решение данной задачи представимо в виде
     \[
-        u(\vec{r}, t) = t\midnum{\psi},
+        u(\vec{r}, t) = t\average{\psi},
     \]
-    где \( \midnum{\psi} \) -- среднее значение начального распределения
+    где \( \average{\psi} \) -- среднее значение начального распределения
     \( \psi \) по сфере радиуса \( ct \) с центром в точке \( (x, y, z) \):
 \end{minipage}
 \[
-    \midnum{\psi} = \frac{1}{4\pi c^2t^2} \int\limits_0^\pi
+    \average{\psi} = \frac{1}{4\pi c^2t^2} \int\limits_0^\pi
     \int\limits_0^{2\pi} \psi(x + ct\sin\theta\cos\alpha, y + ct\sin\theta
     \sin\alpha, z + ct\cos\theta)c^2t^2\sin\theta\d\theta\d\alpha.
 \]
@@ -33,10 +33,10 @@
 Для получения полного решения рассмотрим теперь задачу с
 \( \phi(\vec{r}) \neq 0 \) и \( \psi(\vec{r}) \equiv 0 \). По теореме Стокса,
 решение этой задачи может быть найдено дифференцированием решения предыдущей
-задачи: \( \ds u(\vec{r}, t) = \pder{}{t}\Bigl(t\midnum{\phi}\Bigr) \).
+задачи: \( \ds u(\vec{r}, t) = \pder{}{t}\Bigl(t\average{\phi}\Bigr) \).
 
 Тогда решение исходной задачи может быть записано в виде:
-\( \ds u(\vec{r}, t) = t\midnum{\psi} + \pder{}{t}\Bigl(t\midnum{\phi}\Bigr) \).
+\( \ds u(\vec{r}, t) = t\average{\psi} + \pder{}{t}\Bigl(t\average{\phi}\Bigr) \).
 
 Полученная формула называется формулой Пуассона и является обобщением формулы
 д'Аламбера на трёхмерный случай. Физической интерпретацией формулы Пуассона
