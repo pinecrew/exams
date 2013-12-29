@@ -1,7 +1,7 @@
 import graph;
 import settings;
 
-outformat="png";
+outformat="pdf";
 size(250,200,IgnoreAspect);
 
 real f(real x){return 0.2*x^3/(exp(x/10) - 1);}
