@@ -27,7 +27,7 @@
 \begin{equation}
   U(r, \phi) = \frac{1}{2\pi\Ez}\left[ q_k\ln r + q_c\ln\sqrt{r^2 + 1 -
     2r\cos\phi} \right] + B.
-  \label{eqU1}
+  \label{eq20U1}
 \end{equation}
 
 Преобразуем комплексную плоскость по закону
@@ -63,7 +63,7 @@
   \phi = \frac{2\pi}{L}y.
 \]
 
-Подставим это в \eqref{eqU1}:
+Подставим это в \eqref{eq20U1}:
 \[
   U(x, y) = \frac{1}{2\pi\Ez} \left[ q_k\frac{2\pi}{L}x + q_c \ln
     \sqrt{e^{4\pi x / L} + 1 - 2e^{2\pi x / L}\cos\frac{2\pi}{L}y} \right] + B.
@@ -95,27 +95,27 @@
   U(x, y) = \frac{1}{2\pi\Ez} \left[ q_k\frac{2\pi}{L}(x + d_\text{кс}) +
     \frac{q_c}{2} \ln\left( e^{4\pi x / L} + 1 - 2e^{2\pi x / L}
     \cos\frac{2\pi}{L}y \right) \right].
-  \label{eqU}
+  \label{eq20U}
 \end{equation}
 
 Из второго условия найдем \( U_C \):
 \begin{equation}
   U_C = \frac{1}{2\pi\Ez} \left[ q_k\frac{2\pi}{L}d_\text{кс} + q_c
     \ln\left( 2\sin\frac{pi}{L}R_C \right) \right].
-  \label{eqUC}
+  \label{eq20UC}
 \end{equation}
 
 Из третьего~-- \( U_A \), учитывая, что \( d_\text{са} \gg\gg L \):
 \begin{equation}
   U_A = \frac{1}{2\pi\Ez} \left[ q_k\frac{2\pi}{L}\d_\text{ка} + q_c
     \frac{2\pi}{L}d_\text{са} \right],
-  \label{eqUA}
+  \label{eq20UA}
 \end{equation}
 где \( d_\text{са} = d_\text{кс} + d_\text{са} \)~-- расстояние от катода до
 анода.
 
-Решая систему из уравнений \eqref{eqUC} и \eqref{eqUA} относительно неизвестных
-зарядов \( q_k \) и \( q_c \) и подставляя их в \eqref{eqU}, получим:
+Решая систему из уравнений \eqref{eq20UC} и \eqref{eq20UA} относительно неизвестных
+зарядов \( q_k \) и \( q_c \) и подставляя их в \eqref{eq20U}, получим:
 \begin{gather*}
   U(x, y) = \frac{\left\{ -U_A \dfrac{L}{2\pi} \ln\left[ 2\sin\left(
     \dfrac{\pi R_C}{L} \right) \right] + U_C d_\text{са} \right\} \cdot
@@ -134,7 +134,7 @@
 Данный потенциал будет называться действующим. Его можно свести к виду
 \begin{equation}
   U_D = \sigma (U_C + D U_A),
-  \label{eqUD}
+  \label{eq20UD}
 \end{equation}
 где коэффициент
 \[
