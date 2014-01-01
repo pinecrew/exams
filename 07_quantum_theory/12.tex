@@ -1,1 +1,64 @@
 \question{Линейный гармонический осциллятор}
+Потенциаьная энергия линейного гармонического осциллятора
+\[
+    U(x) = \frac{kx^2}{2} = \frac{m\omega^2x^2}{2}.
+\]
+Уравнение Шрёдингера имеет вид
+\begin{equation}
+    -\frac{\hbar^2}{2m}\dder{\psi}{x} + \frac{m\omega^2x^2}{2}\psi = E\psi
+    \label{eq:12:schrodinger}
+\end{equation}
+Сделаем замену:
+\begin{equation}
+    \xi = \sqrt{\frac{m\omega}{\hbar}}x
+    \label{eq:12:replacement}
+\end{equation}
+\[
+    -\frac{\hbar^2}{2m}\frac{m\omega}{\hbar}\dder{\psi}{\xi} +
+    \frac{m\omega^2}{2}\frac{\hbar}{m\omega}\xi^2\psi = E\psi,
+\]
+\begin{equation}
+    \dder{\psi}{\xi} - \xi^2\psi + \lambda\psi = 0,
+    \label{eq:12}
+\end{equation}
+где
+\[
+    \lambda = \frac{2E}{\hbar\omega}.
+\]
+Будем искать решение в виде
+\begin{equation}
+    \psi = e^{\beta \xi^2}\sum_{n=0}^{\infty} a_n\xi^n:
+    \label{eq:12:solution}
+\end{equation}
+\[
+    e^{\beta\xi^2}\left[ \left(\sum_{n=0}^{\infty} a_n\xi^n\right)''
+    + 4\beta\xi\left(\sum_{n=0}^{\infty} a_n\xi^n\right)' +
+    2\beta(1+2\beta\xi^2)\sum_{n=0}^{\infty} a_n\xi^n\right] -
+    \xi^2e^{\beta \xi^2}\sum_{n=0}^{\infty} a_n\xi^n +
+    \lambda e^{\beta \xi^2}\sum_{n=0}^{\infty} a_n\xi^n = 0,
+\]
+\[
+    \sum_{n=0}^{\infty} (n+2)(n+1)a_{n+2}\xi^n
+    + 4\beta\xi\sum_{n=0}^{\infty} (n+1)a_{n+1}\xi^n +
+    (2\beta+\lambda+(4\beta^2-1)\xi^2)\sum_{n=0}^{\infty} a_n\xi^n = 0.
+\]
+Тут нужно допреобразовать, промажорировать полученный ряд и сказать, что это не
+может быть ряд, только полином.
+
+Для заданной степени полинома \( n \) равенство возмодно лишь при условии
+\[
+    4\beta^2-1 = 0,\quad \beta = -0.5.
+\]
+
+Уравнение преобразуется к виду
+\[
+    P_n'' - 2\xi P_n' + (\lambda - 1)P_n = 0.
+\]
+Это уравнение переходит в уравнение полиномов Эрмита при \( \lambda - 1 = 2n \).
+Отсюда получаем собственные значения и собственные функции:
+\[
+    E = \hbar\omega\left( n + \frac{1}{2} \right),\quad
+    \psi_n = H_n(\xi)e^{-\frac{\xi^2}{2}},
+\]
+где \( \xi \) связано с \( x \) соотношением (\ref{eq:12:replacement}).
+
