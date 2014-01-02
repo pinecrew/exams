@@ -4,11 +4,11 @@ NAME=$(shell basename `pwd`)
 FLAGS=-jobname=output -pdf
 
 default: *.tex
-	$(COMPILER)	$(FLAGS) $(SOURCE)
+	$(COMPILER) $(FLAGS) $(SOURCE)
 
 dropbox: default
 	cp output.pdf ~/Dropbox/Public/exams/$(NAME).pdf
 
 clean:
-	$(COMPILER) -C
+	$(COMPILER) $(FLAGS) -C $(SOURCE)
 
