@@ -1,1 +1,0 @@
-/home/eli/code/exams/utils/common_makefile
