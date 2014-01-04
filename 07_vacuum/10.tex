@@ -1,2 +1,130 @@
 \question{Аксиально-симметричные магнитные поля. Распределение поля в
   параксиальной области}
+
+Для определения характера зависимости траектории частицы в неоднородном
+статическом магнитном поле необходимо знать пространственное распределение
+\( \vec{B}_0(z) \). Примем, что поле \( \vec{B}_0 \) не зависит от угла поворота
+вдоль оси симметрии \( z \), т.~е. \( \vec{B}_0 = \vec{B}_0(r, z) \).
+
+Представим вектор индукции магнитного поля через векторный потенциал\( \vec{A} \):
+\[
+  \vec{B}_0 = \rotor\vec{A},
+\]
+или, расписывая в скалярной форме, получим
+\begin{equation}
+  \left\{
+    \begin{array}{l}
+      \displaystyle B_{0z} = \frac{1}{r}\pder{}{r} \Big( rA_\phi \Big); \\
+      \displaystyle B_{0r} = -\pder{A_\phi}{z}; \\
+      \displaystyle B_{0\phi} = \pder{A_r}{z} - \pder{A_z}{r}.
+    \end{array}
+  \right.
+  \label{eq10B0rotor}
+\end{equation}
+
+С другой стороны, из уравнений Максвелла при отсутствии сторонних токов для
+статического случая \( \rotor\vec{B}_0 = 0 \). Отсюда:
+\begin{equation}
+  \left\{
+    \begin{array}{l}
+      \displaystyle \Big( \rotor\vec{B}_0 \Big)_z = \frac{1}{r} \pder{}{r}
+        \Big( rB_{0\phi} \Big) = 0; \\
+      \displaystyle \Big( \rotor\vec{B}_0 \Big)_r = -\pder{B_{0\phi}}{z} = 0; \\
+      \displaystyle \Big( \rotor\vec{B}_0 \Big)_\phi = \pder{B_{0r}}{z} -
+        \pder{B_{0z}}{r} = 0.
+    \end{array}
+  \right.
+  \label{eq10B0Maxwell}
+\end{equation}
+
+Из первый двух уравнений системы \eqref{eq10B0Maxwell} следует, что составляющая
+\( B_{0\phi} \) не зависит от \( r \) и \( \phi \). Ее можно положить равной
+нулю. Из \eqref{eq10B0rotor} и \eqref{eq10B0Maxwell} вытекают следующие
+соотношения:
+\begin{equation}
+  B_{0z} = \frac{1}{r} \pder{}{r} \Big( rA_\phi \Big); \quad
+    B_{0r} = -\pder{A_\phi}{z}; \quad
+    \pder{B_{0r}}{z} - \pder{B_{0z}}{r} = 0.
+  \label{eq10B0z}
+\end{equation}
+
+Подставляя в последнее из уравнений первые два получим дифференциальное
+уравнение второго порядка:
+\[
+  \ppder{A_\phi}{z} + \ppder{A_\phi}{r} + \frac{1}{r}\pder{A_\phi}{r} -
+    \frac{A_\phi}{r^2} = 0.
+\]
+
+Представим решение этого уравнения в виде ряда
+\[
+  A_\phi(r, z) = f_0(z) + r f_1(z) + r^2 f_2(z) + r^3 f_3(z) + \ldots
+\]
+
+Подставим в дифференциальное уравнение, учитывая, что при одинаковых степенях
+\( r \) коэффициенты должны быть равны нулю. Сведем коэффициенты при различных
+степенях в таблицу~\ref{tab10nums}
+\begin{table}[h!]
+  \center
+  \caption{Коэффициенты при степенях \( r \)}
+  \label{tab10nums}
+  \begin{tabular}{|>{\( \displaystyle}C{.1}<{\)}|*{9}{>{\(}C{.05}<{\)}|}} \hline
+    & -2 & -1 & 0 & 1 & 2 & 3 & 4 & 5 & \ldots \\ \hline
+    -\frac{A_\phi}{r^2} & f_0 & f_1 & f_2 & f_3 & f_4 & f_5 & f_6 & f_7 &
+      \ldots \rule{0pt}{2.2em} \\ \hline
+    \frac{1}{r}\pder{A_\phi}{r} & 0 & f_1 & 2f_2 & 3f_3 & 4f_4 & 5f_5 &
+      6f_6 & 7f_7 & \ldots \rule{0pt}{2.2em} \\ \hline
+    \ppder{A_\phi}{r} & 0 & 0 & 2f_2 & 6f_3 & 12f_4 & 20f_5 & 30f_6 & 42f_7 &
+      \ldots \rule{0pt}{2.2em} \\ \hline
+    \ppder{A_\phi}{z} & 0 & 0 & f_0'' & f_1'' & f_2'' & f_3'' & f_4'' & f_5'' &
+      \ldots \rule{0pt}{2.2em} \\ \hline
+  \end{tabular}
+\end{table}
+
+Получаем \( f_0 = 0 \), следовательно, \( 3f_2 = -f_0'' = 0 \),
+\( 15f_4 = -f_2'' = 0 \), \ldots, \( f_{2n} = 0 \); \\
+\(
+  f_3 = -f_1'' / (2 + 2 \cdot 3)
+\),
+\(
+  f_5 = f_1^{(IV)} / \big[ (2 + 2 \cdot 3) \cdot (4 + 4 \cdot 5) \big]
+\),
+\ldots,
+\(
+  f_{2n + 1} = (-1)^n f_1^{(2n)} / \big[ 2^n 2^n n! (n+1)! \big]
+\).
+
+Таким образом,
+\[
+  A_\phi(r, z) = \sum_{n = 0}^\infty (-1)^n
+    \frac{f_1^{(2n)}}{2^{2n} n! (n + 1)!} r^{2n + 1}.
+\]
+
+Для определения смысла функции \( f_1(z) \) подставим \( A_\phi(r, z) \) в
+первое уравнение \eqref{eq10B0z}:
+\[
+  B_{0z} = \frac{A_\phi}{r} + \pder{A_\phi}{r} = 2f_1 - \frac{1}{2}r^2 f_1''(z)
+    + \ldots
+\]
+
+При \( r = 0 \) \( f_1 = B_0 / 2 \), где \( B_0 \)~-- \( z \)-составляющая
+магнитного поля на оси симметрии системы.
+
+Подставляя в \( A_\phi(r, z) \), имеем
+\[
+  A_\phi(r, z) = \sum_{n = 0}^\infty (-1)^n
+    \frac{B_0^{(2n)}}{n! (n + 1)!} \left( \frac{r}{2} \right)^{2n + 1}.
+\]
+
+В итоге, для составляющих магнитной индукции получаем:
+\[
+  B_{0z}(r, z) = \sum_{n = 0}^\infty (-1)^n
+    \frac{B_0^{(2n)}}{(n!)^2} \left( \frac{r}{2} \right)^{2n}, \qquad
+    B_{0r}(r, z) = \sum_{n = 0}^\infty (-1)^n
+    \frac{B_0^{(2n + 1)}}{n! (n + 1)!} \left( \frac{r}{2} \right)^{2n + 1}.
+\]
+
+В параксиальном приближении
+\[
+  B_{0r} = -\frac{r}{2}B_0', \quad
+    B_{0z} = B_0.
+\]
