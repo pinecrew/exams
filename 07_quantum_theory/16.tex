@@ -1,1 +1,123 @@
 \question{Атом водорода}
+Запишем уравнение Шредингера для электрона в кулоновском потенциале протона:
+\[
+    -\frac{\hbar^2}{2m}\Delta\psi - \frac{e^2}{r}\psi = E\psi,
+\]
+где \( e^2 = q_e^2/4\pi\eps_0 \). Так как рассматриваемая система обладает
+сферической симметрией, то лапласиан запишем в сферических координатах:
+\[
+    \Delta = \frac{1}{r^2}\pder{}{r}\left(r^2\pder{}{r}\right) +
+    \frac{1}{r^2\sin\theta}\pder{}{\theta}\left(\sin\theta\pder{}{\theta}\right) +
+    \frac{1}{r^2\sin^2\theta}\ppder{}{\phi}.
+\]
+Подставив, получим
+\[
+    \left[\pder{}{r}\left(r^2\pder{}{r}\right) +
+    \frac{1}{\sin\theta}\pder{}{\theta}\left(\sin\theta\pder{}{\theta}\right) +
+    \frac{1}{\sin^2\theta}\ppder{}{\phi}\right]\psi =
+    -\frac{2mr^2}{\hbar^2}\left(\frac{e^2}{r}+E\right)\psi,
+\]
+или
+\[
+    \pder{}{r}\left(r^2\pder{\psi}{r}\right) +
+    \left[
+    \frac{1}{\sin\theta}\pder{}{\theta}\left(\sin\theta\pder{}{\theta}\right) +
+    \frac{1}{\sin^2\theta}\ppder{}{\phi}\right]\psi =
+    -\frac{2mr^2}{\hbar^2}\left(\frac{e^2}{r}+E\right)\psi,
+\]
+Так как электрон движется в поле центральных сил, то система обладает
+поворотной симметрией. С этим типом симметрии связан закон сохранения момента
+импульса. Так как момент импульса сохраняется, то он коммутирует
+с гамильтонианом и энергия и момент импульса могут быть определены
+одновременно. Поэтому \( \psi \) -- также собственная функция момента.
+Тогда во втором слагаемом в левой части
+\[
+    \left[
+    \frac{1}{\sin\theta}\pder{}{\theta}\left(\sin\theta\pder{}{\theta}\right) +
+    \frac{1}{\sin^2\theta}\ppder{}{\phi}\right]\psi =
+    -\frac{1}{\hbar^2}\hat{L}^2\psi = -l(l+1)\psi.
+\]
+Подставив это, получим
+\[
+    \pder{}{r}\left(r^2\pder{\psi}{r}\right) =
+    \left[-\frac{2mr^2}{\hbar^2}\left(\frac{e^2}{r}+E\right)+l(l+1)\right]\psi.
+\]
+Теперь сделаем замены:
+\[
+    r = \frac{\hbar^2}{me^2}\rho,\quad E = \frac{me^4}{2\hbar^2}\eps
+\]
+и получим
+\[
+    \pder{}{\rho}\left(\rho^2\pder{\psi}{\rho}\right) =
+    \left[-\frac{2}{\rho}-\eps+l(l+1)\right]\rho^2\psi.
+\]
+Введём вспомогательную функцию \( \gamma = \rho\psi \). Тогда
+\[
+    \pder{\psi}{\rho} = \pder{}{\rho}\left(\frac{\gamma}{\rho}\right) =
+    \frac{1}{\rho}\pder{\gamma}{\rho} - \frac{1}{\rho^2}\gamma,
+\]
+\[
+    \pder{}{\rho}\left(\rho^2\pder{\psi}{\rho}\right) = \pder{}{\rho}\left(
+    \rho\pder{\gamma}{\rho} - \gamma\right) = \pder{\gamma}{\rho} + \rho\ppder{\gamma}{\rho} -
+    \pder{\gamma}{\rho} = \rho\ppder{\gamma}{\rho}.
+\]
+Подставим обратно и получим
+\[
+    \ppder{\gamma}{\rho} =
+    \left[-\frac{2}{\rho}-\eps+l(l+1)\right]\gamma.
+\]
+Есть мнение, что решение стоит искать в виде
+\[
+    \gamma = e^{-\alpha\rho}\sum_{k=0}^{\infty} a_k\rho^k.
+\]
+Подставим его в уравнение:
+\[
+    \alpha^2 \sum_{k=0}^{\infty} a_k\rho^k -
+    2\alpha\left(\sum_{k=0}^{\infty} a_k\rho^k\right)' +
+    \left(\sum_{k=0}^{\infty} a_k\rho^k \right)''
+    = - \left(\eps + \frac{2}{\rho} - \frac{l(l+1)}{\rho^2}\right)
+    \sum_{k=0}^{\infty} a_k\rho^k,
+\]
+\[
+    \alpha^2 \sum_{k=0}^{\infty} a_k\rho^k -
+    2\alpha\sum_{k=0}^{\infty} (k+1)a_{k+1}\rho^k +
+    \sum_{k=0}^{\infty} (k+1)(n+2)a_{k+2}\rho^k =
+    -\eps\sum_{k=0}^{\infty} a_k\rho^k -
+    2\sum_{k=-1}^{\infty} a_{k+1}\rho^k +
+    l(l+1)\sum_{k=-2}^{\infty} a_{k+2}\rho^k.
+\]
+Приводя подобные, получаем:
+\begin{align*}
+    k=-2:&\quad la_0 = 0,\\
+    k=-1:&\quad 2a_0 - l(l+1)a_1 = 0\text{ или } a_0 = 0,\ la_1 = 0 ,\\
+    k\ge0:&\quad \alpha^2 a_k - 2\alpha(k+1)a_{k+1}+
+    (k+1)(k+2)a_{k+2} = -\eps a_k - 2 a_{k+1} + l(l+1)a_{n+2}.
+\end{align*}
+На \( \alpha \) мы можем наложить ограничение. Для упрощения положим, что \( \alpha^2 = -\eps \). Тогда
+\[
+    a_{k+2} = \frac{2(\alpha(k+1) - 1)}{(k+1)(k+2) - l(l+1)} a_{k+1},
+\]
+или, уменьшив индексы на 1
+\[
+    a_{k+1} = \frac{2(\alpha k - 1)}{k(k+1) - l(l+1)} a_k,
+\]
+При \( k\gg l \) имеем
+\[
+    a_{k+1} \approx \frac{2\alpha}{k+1} a_k \approx \frac{(2\alpha)^{k+1}}{(k+1)!}
+\]
+Нетрудно видеть, что это коэффициенты разложения в ряд \( e^{2\alpha\rho} \). Произведение полученного ряда на экспоненту \( e^{-\alpha\rho} \) всё равно даст растущую экспоненту, что не соответствует реальности. Однако, если \( a = 1/n \), то
+\[
+    a_{n+1} = \frac{2(\alpha n - 1)}{k(k+1) - l(l+1)} a_n = 0,
+\]
+и все последующие коэффициенты равны нулю. Поэтому для получения волновых функций связанных состояний следует потребовать
+\[
+    \alpha = \frac{1}{n},\quad n\in\mathbb{N}.
+\]
+Отсюда получаем энергии и волновые функции стационарных состояний электрона в атоме водорода
+\[
+    \eps_n = -\frac{1}{n^2},\quad \psi = \frac{1}{\rho}e^{-\rho/n}\sum_{k=l+1}^{n} a_k\rho^k,\text{ где }a_{k} = \frac{2}{n}\frac{k-1-n}{k(k-1) - l(l+1)} a_{k-1},
+\]
+Если вернуться к энергии стационарного состояния \( E \), то выражение получится следующим
+\[
+    E = -\frac{me^4}{2\hbar^2}\frac{1}{n^2}.
+\]
