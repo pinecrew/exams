@@ -13,14 +13,14 @@
 Поглощение света в прозрачных средах носит резонансный характер. Энергия в
 поглощенных фотонах пропорциональна количеству резонансных переходов
 \[
-    dI = W( N_2 - N_1 ) h\nu dx
+    dI = W( n_2 - n_1 ) h\nu dx
 \]
 \[
     \frac{1}{\text{с}} \cdot \frac{1}{\text{м}^3} \cdot \text{Дж} \cdot \text{с}
         \cdot \frac{1}{\text{с}} \cdot \text{м} = \frac{\text{Вт}}{\text{м}^2}
 \]
 \[
-    \alpha = \sigma( N_1 - N_2 )
+    \alpha = \sigma( n_1 - n_2 )
 \]
 
 \emph{Сечение поглощения (эффективное сечение)} -- площадь поперечного сечения
@@ -40,13 +40,13 @@
 \end{figure}
 \[
 \begin{array}{c}
-    \D N = -\cfrac{N}{1+2W\tau} \\
-    dI = W( N_2 - N_1 ) h\nu dx \\
+    \D n = -\cfrac{n}{1+2W\tau} \\
+    dI = W( n_2 - n_1 ) h\nu dx \\
     dI = -\alpha I dx \\
-    \alpha = \sigma( N_1 - N_2 ) \\
-    W = \cfrac{dI}{(N_2-N_1)h\nu dx} =
-        \cfrac{-\alpha I dx}{(N_2-N_1)h\nu dx} =
-        \cfrac{\sigma(N_2-N_1)I}{(N_2-N_1)h\nu} = \cfrac{\sigma I}{h\nu} \\
+    \alpha = \sigma( n_1 - n_2 ) \\
+    W = \cfrac{dI}{(n_2-n_1)h\nu dx} =
+        \cfrac{-\alpha I dx}{(n_2-n_1)h\nu dx} =
+        \cfrac{\sigma(n_2-n_1)I}{(n_2-n_1)h\nu} = \cfrac{\sigma I}{h\nu} \\
     W = \cfrac{\sigma I}{h\nu} \text{ -- вероятность индуцированных
         переходов}
 \end{array}
@@ -58,7 +58,7 @@
     I_s = I_s(\sigma,\tau,\nu)
 \]
 \[
-    \frac{\D N}{N} = -\frac{1}{1+\cfrac{2\sigma I\tau}{h\nu}} =
+    \frac{\D n}{n} = -\frac{1}{1+\cfrac{2\sigma I\tau}{h\nu}} =
         \frac{-1}{1+\cfrac{I}{I_s}}
 \]
 \( I_s \) -- интенсивность насыщения перехода, зависящая только от параметров
@@ -67,14 +67,14 @@
 В случае резонансного поглощения \( \nu = \nu_0 \) получим зависимость:
 \[
 \begin{array}{c}
-    \D N = \cfrac{-N}{1+\cfrac{I}{I_s}} \\
-    N_1 - N_2 = \cfrac{N}{1+\cfrac{I}{I_s}} \quad\Big|\cdot\sigma \\
-    \sigma(N_1-N_2) = \cfrac{N\sigma}{1+\cfrac{I}{I_c}} \rightarrow
-        \alpha = \cfrac{\sigma N}{1+\cfrac{I}{I_s}}
+    \D n = \cfrac{-n}{1+\cfrac{I}{I_s}} \\
+    n_1 - n_2 = \cfrac{n}{1+\cfrac{I}{I_s}} \quad\Big|\cdot\sigma \\
+    \sigma(n_1-n_2) = \cfrac{n\sigma}{1+\cfrac{I}{I_c}} \rightarrow
+        \alpha = \cfrac{\sigma n}{1+\cfrac{I}{I_s}}
 \end{array}
 \]
 
-При \( I = 0 \rightarrow \alpha = \sigma N = \alpha_0 \). \( \alpha_0 \) --
+При \( I = 0 \rightarrow \alpha = \sigma n = \alpha_0 \). \( \alpha_0 \) --
 коэффициент поглощения в отсутствие насыщающей ЭМВ или если она имеет другую
 частоту \( \nu \neq \nu_0 \)
 
@@ -91,11 +91,11 @@
 однородным усилением.
 
 \subquestion{Коэффициент усиления активной среды}
-Поглощающая среда \( N_1 > N_2 \Rightarrow \alpha = \sigma(N_1 - N_2) > 0 \) \\
-Усиливающая среда \( N_1 < N_2 \Rightarrow k = \sigma(N_2 - N_1) > 0 \) \\
+Поглощающая среда \( n_1 > n_2 \Rightarrow \alpha = \sigma(n_1 - n_2) > 0 \) \\
+Усиливающая среда \( n_1 < n_2 \Rightarrow k = \sigma(n_2 - n_1) > 0 \) \\
 где \( k \) -- коэффициент усиления.
 \[
-    k = \sigma(N_2 - N_1);\quad
+    k = \sigma(n_2 - n_1);\quad
     k = \frac{k_0}{1+\cfrac{I}{I_\sigma}}, \text{ где } k_0 \text{ при } I = 0
 \]
 
