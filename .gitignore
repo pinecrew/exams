@@ -5,3 +5,4 @@
 *.log
 *.out
 *.fdb_latexmk
+*.gz
